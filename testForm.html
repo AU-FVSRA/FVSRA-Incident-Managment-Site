@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Joan's Form</title>
+    <!-- how to include bulma dynamically out of node modules -->
+    <!-- https://github.com/jgthms/bulma/issues/1104 -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/testForm.js"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">
+            Minor Injury Report Form
+        </h1>
+        <p class="subtitle">
+            Please fill out the form below to report a minor injury.
+        </p>
+
+        <!-- form below -->
+
+            <!-- Form section #1 -->
+            <div class="columns">
+                <!-- warning/instructions -->
+                <div class="column" id="instructionsCol">
+                    <article class="message is-danger">
+                        <div class="message-header">
+                            <p>Instructions</p>
+                            <button type="button" class="delete" onclick="hideInstructions()"></button>
+                        </div>
+                        <div class="message-body">
+                            <div class="content">
+                                <ol>
+                                    <li><strong>Administer necessary first aid</strong></li>
+                                    <li>Document minor injuries utilizing this form
+                                        <ul>
+                                            <li>(For serious injuries please utilize PDRMA forms)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Notify parent/guardian upon dismissal from program</li>
+                                </ol>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+                <!-- program/group name -->
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="programName">Program/Group Name</label>
+                        <div class="control has-icons-left">
+                            <!-- <input class="input" type="text" id="programName" name="programName">-->
+                            <span class="select" id="programSelection">
+                                <select id="programName" name="programName">
+                                    <option value="1">Basketball Program - Summer</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                    <option value="4">Option 4</option>
+                                    <option value="5">Option 5</option>
+                                    <option value="addNewProgram">Add New...</option>
+                                </select>
+                            </span>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-globe"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="programLeader">Program Leader(s)</label>
+                        <div class="control">
+                            <input class="input" id="programLeader" name="programLeader" type="text">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="programSeasonYear">Program Season/Year</label>
+                        <div class="control">
+                            <input class="input" id="programSeasonYear" name="programSeasonYear" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr>
+
+            <!-- Form Section #2 -->
+            <div class="field">
+                <div class="columns">
+                    <div class="column">
+                        <label class="label" for="injuryDate">Injury Date</label>
+                        <div class="control">
+                            <input class="input" id="injuryDate" name="injuryDate" type="text">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label class="label" for="injuryTime">Injury Time</label>
+                        <div class="control">
+                            <input class="input" id="injuryTime" name="injuryTime" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="nameOfInjured">Name of Injured Person</label>
+                <div class="control">
+                    <input class="input" id="nameOfInjured" name="nameOfInjured" placeholder="Name of Injured Person"
+                           type="text">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="injuryLocation">Location of Injury on Person</label>
+                <div class="control">
+                    <input class="input" id="injuryLocation" name="injuryLocation"
+                           placeholder="Location of Injury (Ex. Right Elbow, Left Knee, etc.)" type="text">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="treatmentAdministered">Treatment Administered</label>
+                <div class="control">
+                    <input class="input" id="treatmentAdministered" name="treatmentAdministered"
+                           placeholder="Treatment Administered (Ex. Rinsed wound, applied bandage, ice pack provided, etc.)"
+                           type="text">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="howInjuryOccurred">How Injury Occurred</label>
+                <div class="control">
+            <textarea class="textarea" id="howInjuryOccurred" name="howInjuryOccurred"
+                      placeholder="Explain how the injury occurred (Ex. Fell off swing)"></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="locationInjuryOccurred">Facility/Location Injury Occurred</label>
+                <div class="control">
+            <textarea class="textarea" id="locationInjuryOccurred" name="locationInjuryOccurred"
+                      placeholder="Where did the injury take Pr? (Ex. Harmony Park Swings)" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="staffWhoNotified">Full Name of Staff Who Notified Parent/Guardian</label>
+                <div class="control">
+                    <input class="input" id="staffWhoNotified" name="staffWhoNotified"
+                           placeholder="Staff member who notified parent/guardian of injured peron."
+                           type="text">
+                </div>
+            </div>
+            <div class="field is-pulled-right">
+                <div class="control">
+                    <input class="button is-info" type="submit" onClick="insertNew">
+                </div>
+            </div>
+    </div>
+</section>
+
+<!--
+&lt;!&ndash; test popup modal on option selection &ndash;&gt;
+<div class="modal" id="testModal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Modal title</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            &lt;!&ndash; Content ... &ndash;&gt;
+            <h1 class="title">
+                Test Modal Header
+            </h1>
+            <p class="subtitle">
+                Test Modal Subtitle
+            </p>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success">Save changes</button>
+            <button class="button">Cancel</button>
+        </footer>
+    </div>
+</div>
+-->
+
+<!-- Just a test script to hide the instructions -->
+<!-- Likely won't be an option in the final product because users are dumb and will not read and just click X -->
+<!-- Instructions are vital and need to be followed
+<script type="text/javascript">
+    //hide the column with id="instructionsCol"
+    function hideInstructions() {
+        document.getElementById("instructionsCol").style.display = "none";
+    }
+</script>
+-->
+
+</body>
+</html>
