@@ -1,6 +1,12 @@
 'use strict';
+
 module.exports = function (app) {
     let todoList = require('../controller/appController');
+
+    // ADDED
+    // Added / route to render the form page
+    app.route('/')
+        .get(todoList.index_test_page)
 
     // todoList Routes
     app.route('/tests')
