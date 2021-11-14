@@ -7,10 +7,12 @@
     <!-- how to include bulma dynamically out of node modules -->
     <!-- https://github.com/jgthms/bulma/issues/1104 -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/testForm.js"></script>
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
 
 </head>
@@ -26,7 +28,7 @@
         </p>
 
         <!-- form below -->
-
+        <form action="localhost:3000/tests" method="post">
             <!-- Form section #1 -->
             <div class="columns">
                 <!-- warning/instructions -->
@@ -34,7 +36,7 @@
                     <article class="message is-danger">
                         <div class="message-header">
                             <p>Instructions</p>
-                            <button type="button" class="delete" onclick="hideInstructions()"></button>
+                            <button class="delete" onclick="hideInstructions()" type="button"></button>
                         </div>
                         <div class="message-body">
                             <div class="content">
@@ -156,9 +158,14 @@
             </div>
             <div class="field is-pulled-right">
                 <div class="control">
-                    <input class="button is-info" type="submit" onClick="insertNew">
+                    <div class="buttons">
+                        <input class="button is-info" onClick="insertNew" type="submit">
+                        <input class="button is-warning" type="submit" value="Test Submit">
+                    </div>
+
                 </div>
             </div>
+        </form>
     </div>
 </section>
 

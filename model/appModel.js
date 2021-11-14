@@ -4,7 +4,7 @@
 const sql = require('./db.js');
 
 //Test object constructor
-let Test = function(test) {
+let Test = function (test) {
     this.program_name = test.program_name;
     this.program_leader = test.program_leader;
     this.program_year = test.program_year;
@@ -20,11 +20,11 @@ let Test = function(test) {
 
 Test.createTest = function (newTest, result) {
     sql.query("INSERT INTO tests set ?", newTest, function (err, res) {
-        if(err) {
+        if (err) {
             console.log("error: ", err);
             result(err, null);
-        }else {
-            console.log(res.insertId);
+        } else {
+            console.log(`Successfully logged Injury! Report ID: ${res.insertId}`);
             result(null, res.insertId);
         }
     });
@@ -32,11 +32,11 @@ Test.createTest = function (newTest, result) {
 
 Test.getAllTests = function (result) {
     sql.query("Select * from tests", function (err, res) {
-        if(err) {
+        if (err) {
             console.log("error: ", err);
             result(null, err);
-        }else {
-            console.log('test : ', res);
+        } else {
+            // console.log('SQL Result Set : ', res);
             result(null, res);
         }
     });
@@ -44,10 +44,10 @@ Test.getAllTests = function (result) {
 
 Test.getTestById = function (testId, result) {
     sql.query("Select id, program_name, program_leader, program_year, injury_date, injury_time, name_injured, location_injury, treatment, how_injury, where_injury, staff from tests where id = ? ", testId, function (err, res) {
-        if(err) {
+        if (err) {
             console.log("error: ", err);
             result(err, null);
-        }else {
+        } else {
             result(null, res);
         }
     });
@@ -55,10 +55,10 @@ Test.getTestById = function (testId, result) {
 
 Test.updateById = function (id, test, result) {
     sql.query("UPDATE tests SET program_name = ?, program_leader = ?, program_year = ?, injury_date = ?,  injury_time = ?, name_injured = ?, location_injury = ?, treatment = ?, how_injury = ?, where_injury = ?, staff = ? WHERE id = ?", [test.program_name, test.program_leader, test.program_year, test.injury_date, test.injury_time, test.name_injured, test.location_injury, test.treatment, test.how_injury, test.where_injury, test.staff, id], function (err, res) {
-        if(err) {
+        if (err) {
             console.log("error: ", err);
             result(null, err);
-        }else {
+        } else {
             result(null, res);
         }
     });
@@ -66,10 +66,10 @@ Test.updateById = function (id, test, result) {
 
 Test.remove = function (id, result) {
     sql.query("DELETE FROM tests WHERE id = ?", [id], function (err, res) {
-        if(err) {
+        if (err) {
             console.log("error: ", err);
             result(null, err);
-        }else {
+        } else {
             result(null, res);
         }
     });
