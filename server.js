@@ -15,14 +15,6 @@ let cors = require('cors')
 
 const mysql = require('mysql');
 
-// connection configurations
-// const mc = mysql.createConnection({
-//     host: '45.55.136.114',
-//     user: 'lostfoundF2021',
-//     password: 'l0stIs0k!',
-//     database: 'lostfoundF2021'
-// });
-
 //TEST DATABASE
 const sql = mysql.createConnection({
     host: 'localhost',
