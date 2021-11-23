@@ -1,33 +1,33 @@
-//testForm.js
+//not needed ???
 
 function insertNew()
 {
-    let program_name = $('#programName').val();
-    let program_leader = $('#programLeader').val();
-    let program_year = $('#programSeasonYear').val();
-    let injury_date = $('#injuryDate').val();
-    let injury_time = $('#injuryTime').val();
-    let name_injured = $('#nameOfInjured').val();
-    let location_injury = $('#injuryLocation').val();
-    let treatment = $('#treatmentAdministered').val();
-    let how_injury = $('#howInjuryOccurred').val();
-    let where_injury = $('#locationInjuryOccurred').val();
-    let staff = $('#staffWhoNotified').val();
+    let programName = $('#programName').val();
+    let programLeader = $('#programLeader').val();
+    let programYear = $('#programYear').val();
+    let injuryDate = $('#injuryDate').val();
+    let injuryTime = $('#injuryTime').val();
+    let nameOfInjured = $('#nameOfInjured').val();
+    let injuryLocation = $('#injuryLocation').val();
+    let treatmentGiven = $('#treatmentGiven').val();
+    let howInjuryOccurred = $('#howInjuryOccurred').val();
+    let whereInjuryOccurred = $('#whereInjuryOccurred').val();
+    let staffName = $('#staffName').val();
 
-    let URL = "http://127.0.0.1:3000/tests";
+    let URL = "http://127.0.0.1:3000/MinorInjuryLog";
 
     let d = {
-        program_name : `${program_name}`,
-        program_leader : `${program_leader}`,
-        program_year : `${program_year}`,
-        injury_date : `${injury_date}`,
-        injury_time : `${injury_time}`,
-        name_injured : `${name_injured}`,
-        location_injury : `${location_injury}`,
-        treatment : `${treatment}`,
-        how_injury : `${how_injury}`,
-        where_injury : `${where_injury}`,
-        staff : `${staff}`
+        programName : `${programName}`,
+        programLeader : `${programLeader}`,
+        programYear : `${programYear}`,
+        injuryDate : `${injuryDate}`,
+        injuryTime : `${injuryTime}`,
+        nameOfInjured : `${nameOfInjured}`,
+        injuryLocation : `${injuryLocation}`,
+        treatmentGiven : `${treatmentGiven}`,
+        howInjuryOccurred : `${howInjuryOccurred}`,
+        whereInjuryOccurred : `${whereInjuryOccurred}`,
+        staffName : `${staffName}`
     };
 
     $.ajax({
