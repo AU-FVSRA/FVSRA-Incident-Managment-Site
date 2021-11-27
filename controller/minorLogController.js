@@ -9,7 +9,11 @@ const Log = require("../model/minorLogModel");
 */
 
 exports.index_test_page = function (req, res) { //might change this later
-    res.render('MinorInjuryForm.pug', {pretty: true});
+    res.render('index.pug', {
+        user: {isLoggedIn: false},
+        copyright_current_year: new Date().getFullYear(),
+        pretty: true
+    });
 };
 
 //-----------------------------------------------
