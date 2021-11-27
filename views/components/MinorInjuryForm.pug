@@ -13,6 +13,7 @@ section.section
                     article.message.is-danger
                         .message-header
                             p Instructions
+                            button.delete(type='button' onclick='hideInstructions()')
                         .message-body
                             .content
                                 ol
@@ -30,12 +31,12 @@ section.section
                         .control.has-icons-left
                             span#programSelection.select
                                 select#programName(name='programName')
-                                    option(value='Select Program/Group') Select Program/Group
-                                    option(value='Basketball Program - Summer') Basketball Program - Summer
-                                    option(value='Option 2') Option 2
-                                    option(value='Option 3') Option 3
-                                    option(value='Option 4') Option 4
-                                    option(value='Option 5') Option 5
+                                    option(value='') Select Program/Group
+                                    option(value='1') Basketball Program - Summer
+                                    option(value='2') Option 2
+                                    option(value='3') Option 3
+                                    option(value='4') Option 4
+                                    option(value='5') Option 5
                                     option(value='addNewProgram') Add New...
                             span.icon.is-small.is-left
                                 i.fas.fa-globe
@@ -85,4 +86,10 @@ section.section
                     input#staffName.input(name='staffName' placeholder='Staff member who notified parent/guardian of injured peron.' type='text')
             .field.is-pulled-right
                 .control
-                    input.button.is-info(type='submit' name='submit' value='Submit')
+                    input.button.is-info(type='submit' value='Submit')
+
+script(type='text/javascript').
+    //hide the column with id="instructionsCol"
+    function hideInstructions() {
+        document.getElementById("instructionsCol").style.display = "none";
+    }
