@@ -16,6 +16,22 @@ exports.index_test_page = function (req, res) { //might change this later
     });
 };
 
+exports.get_form_page = function (req, res) {
+    let selected_form = req.body.formSelection;
+    let pugOptions = {user: {isLoggedIn: false}, copyright_current_year: new Date().getFullYear(), pretty: true}
+
+    // No rendering done here????
+    // Where should this be rendered? (Do a res.redirect() to the form page?)
+    switch (selected_form) {
+        case "minorInjuryForm":
+            res.render("MinorInjuryReport.pug", pugOptions);
+            break;
+        default:
+            // res.render("FormSuccessMessage.pug", {pretty: true});
+            res.render("404.pug", {pretty: true});
+    }
+}
+
 //-----------------------------------------------
 
 exports.list_all_logs = function (req, res) {
@@ -36,7 +52,11 @@ exports.create_a_log = function (req, res) {
     } else {
         Log.createLog(new_log, function (err, log) {
             if (err) res.send(err);
-            res.json(log);
+
+            // Jared: Testing here
+            //res.json(log);
+            // res.redirect('/');
+            res.render("FormSuccessMessage.pug", {pretty: true});
         });
     }
 };
