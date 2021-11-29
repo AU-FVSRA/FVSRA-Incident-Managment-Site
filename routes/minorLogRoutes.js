@@ -8,6 +8,10 @@ module.exports = function (app) {
     app.route('/')
         .get(schema.index_test_page)
 
+    app.route('/formSelection')
+        .get(schema.get_form_page)
+        .post(schema.get_form_page)
+
     // schema Routes
     app.route('/MinorInjuryLog')
         .get(schema.list_all_logs)
