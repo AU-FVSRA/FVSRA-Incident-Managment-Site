@@ -1,0 +1,153 @@
+section.section
+    .container
+        form
+            .message.is-info.has-text-centered
+                .message-body
+                    figure.image.is-128x128
+                        img.is-rounded(alt='PDRMA_LOGO_ROUNDED' src='https://media-exp1.licdn.com/dms/image/C4E0BAQHJeEACfvB0WQ/company-logo_200_200/0/1623763985456?e=2159024400&v=beta&t=6P9gEX5E-fAXw32TdOXnFY2iLws01efvqMzBCHFp1VE')
+                    h1.title Park District Risk Management Agency (Form 04E)
+                    p.subtitle Notification of Injury to Employer Report
+                    p.subtitle (Employee to complete and submit to supervisor or HR)
+            .field
+                label.label(for='employeeFullName') Employee Name
+                .control
+                    input#employeeFullName.input(name='employeeFullName' type='text')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='dateOfIncident') Date of incident
+                        .control
+                            input#dateOfIncident.input(name='dateOfIncident' type='date')
+                    .column
+                        label.label(for='timeOfIncident') Time of incident
+                        .control
+                            input#timeOfIncident.input(name='timeOfIncident' type='time')
+            hr
+            .field
+                label.label(for='specificLocationOfIncident')
+                    | Specific location of accident.(Ex. Second floor
+                    | hallway of recreation center, storage closet of maintenance shed, south entrance of aquatic
+                    | facility, etc.)
+                .control
+                    textarea#specificLocationOfIncident.textarea(name='specificLocationOfIncident')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label Are you reporting the injury for the first time using this form?
+                        label.radio
+                            input(name='reportingForFirstTime' type='radio' value='yes')
+                            |                             Yes
+                        label.radio
+                            input(name='reportingForFirstTime' type='radio' value='no')
+                            |                             No
+                        .field
+                            label.label
+                                | If no, when did you first report the injury (verbally or in writing)
+                                | and to whom did you report it?
+            .field
+                .columns
+                    .column
+                        label.label(for='priorReportDate') Date
+                        .control
+                            input#priorReportDate.input(name='priorReportDate' type='date')
+                    .column
+                        label.label(for='priorReportTime') Time
+                        .control
+                            input#priorReportTime.input(name='priorReportTime' type='time')
+                    .column
+                        label.label(for='priorPersonReportedTo') Reported to
+                        .control
+                            input#priorPersonReportedTo.input(name='priorPersonReportedTo' type='text')
+            hr
+            .field
+                label.label(for='describeHowInjuryOccurred')
+                    | Describe how the injury occurred. (Identify the job
+                    | task you were doing and include a step-by-step explanation of what led to the injury.)
+                .control
+                    textarea#describeHowInjuryOccurred.textarea(name='describeHowInjuryOccurred')
+            hr
+            .field
+                label.label(for='namesOfAllPeoplePresent')
+                    | Name all people present at the time of injury (e.g.,
+                    | coworkers and/or witnesses)
+                .control
+                    textarea#namesOfAllPeoplePresent.textarea(name='namesOfAllPeoplePresent')
+            hr
+            .field
+                label.label(for='allBodyPartsInjured')
+                    | Identify all body parts you injured. (Be specific.
+                    | Indicate left or right, upper or lower.)
+                .control
+                    textarea#allBodyPartsInjured.textarea(name='allBodyPartsInjured')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label Did you seek medical attention on the date of the accident?
+                        label.radio
+                            input(name='medicalAttentionSought' type='radio' value='yes')
+                            |                             Yes
+                        label.radio
+                            input(name='medicalAttentionSought' type='radio' value='no')
+                            |                             No
+            .field
+                label.label(for='whereWasMedicalTreatmentGiven') If yes, where did you seek treatment?
+                .control
+                    input#whereWasMedicalTreatmentGiven.input(name='whereWasMedicalTreatmentGiven' type='text')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label Have you injured this body part previously?
+                        label.radio
+                            input(name='previouslyInjuredBodyPart' type='radio' value='yes')
+                            |                             Yes
+                        label.radio
+                            input(name='previouslyInjuredBodyPart' type='radio' value='no')
+                            |                             No
+            .field
+                label.label(for='priorInjuryDescription')
+                    | If yes, please describe which body part and what the
+                    | prior injury was.
+                .control
+                    textarea#priorInjuryDescription.textarea(name='priorInjuryDescription')
+            .field
+                label.label(for='priorInjuryMedicalHistory') If yes, where did you seek treatment?
+                .control
+                    input#priorInjuryMedicalHistory.input(name='priorInjuryMedicalHistory' type='text')
+            hr
+            .field
+                label.label The above information is true and accurate:
+            .field
+                .columns
+                    .column
+                        label.label(for='employeeSignature') Employee Signature
+                        .control
+                            input#employeeSignature.input(name='employeeSignature' type='text')
+                    .column
+                        label.label(for='employeeSignatureDate') Date
+                        .control
+                            input#employeeSignatureDate.input(name='employeeSignatureDate' type='date')
+            hr
+            .field
+                label.label Notification of injury was received on:
+            .field
+                label.label(for='dateIncidentReportReceived') Date received by employer representative
+                .control
+                    input#dateIncidentReportReceived.input(name='dateIncidentReportReceived' type='date')
+            .field
+                label.label Notification of injury was received by:
+            .field
+                label.label(for='fvsraEmployeeSignature') Representative signature
+                .control
+                    input#fvsraEmployeeSignature.input(name='fvsraEmployeeSignature' type='text')
+            .field
+                label.label(for='fvsraEmployeeSignaturePrint') Printed name
+                .control
+                    input#fvsraEmployeeSignaturePrint.input(name='fvsraEmployeeSignaturePrint' type='text')
+            hr
+            .buttons
+                button.button.is-info(type='submit') Submit
+                button.button.is-warning(type='reset') Reset

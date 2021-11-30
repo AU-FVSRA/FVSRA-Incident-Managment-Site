@@ -1,0 +1,206 @@
+section.section
+    .container
+        form
+            .message.is-info.has-text-centered
+                .message-body
+                    figure.image.is-128x128
+                        img.is-rounded(alt='PDRMA_LOGO_ROUNDED' src='https://media-exp1.licdn.com/dms/image/C4E0BAQHJeEACfvB0WQ/company-logo_200_200/0/1623763985456?e=2159024400&v=beta&t=6P9gEX5E-fAXw32TdOXnFY2iLws01efvqMzBCHFp1VE')
+                    h1.title Park District Risk Management Agency (Form 03)
+                    p.subtitle (For damage to agency property)
+                    p.subtitle Attorney/Client Privileged Document
+            .field
+                .columns
+                    .column
+                        label.label(for='agencyName') Agency Name
+                        .control
+                            input#agencyName.input(name='agencyName' placeholder='Agency Name' type='text' value='Fox Valley Special Recreation')
+                    .column
+                        label.label(for='todaysDate') Today&apos;s Date
+                        .control
+                            input#todaysDate.input(name='todaysDate' type='date')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='dateOfIncident') Date of Incident
+                        .control
+                            input#dateOfIncident.input(name='dateOfIncident' type='date')
+                    .column
+                        label.label(for='timeOfIncident') Time of Incident
+                        .control
+                            input#timeOfIncident.input(name='timeOfIncident' type='time')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='nameOfPersonCompletingForm') Name of Person Completing Report
+                        .control
+                            input#nameOfPersonCompletingForm.input(name='nameOfPersonCompletingForm' type='text')
+                    .column
+                        label.label(for='titleOfPersonCompletingReport')
+                            | Title of Person Completing
+                            | Report
+                        .control
+                            input#titleOfPersonCompletingReport.input(name='titleOfPersonCompletingReport' type='text')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='businessPhone') Business Phone
+                        .control
+                            input#businessPhone.input(name='businessPhone' placeholder='(123) 456-7890' type='number')
+                    .column
+                        label.label(for='businessEmail') Business Email
+                        .control
+                            input#businessEmail.input(name='businessEmail' placeholder='user@email.com/.org' type='text')
+            hr
+            .field
+                label.label(for='incidentDescription')
+                    | How Did the Incident Occur and What Property was
+                    | Damaged?
+                .control
+                    textarea#incidentDescription.textarea(name="incidentDescription" placeholder='Provide a brief factual summary')
+            hr
+            .field
+                label.label(for='locationOfIncident')
+                    | Name of the location (park, pool, community center; Ex.
+                    | Smith Pool,
+                    | Johnson Community Center) or nearest intersection where the incident occurred
+                .control
+                    input#locationOfIncident.input(name='locationOfIncident' type='text')
+            hr
+            .field
+                label.label
+                    | Is there an address for incident location? If yes, please provide the
+                    | following:
+            .field
+                label.label(for='incidentLocationStreetAddress') Street Address
+                .control
+                    input#incidentLocationStreetAddress.input(name='incidentLocationStreetAddress' placeholder='123 Name St' type='text')
+            .field
+                .columns
+                    .column
+                        label.label(for='incidentLocationCity') City
+                        .control
+                            input#incidentLocationCity.input(name='incidentLocationCity' type='text')
+                    .column
+                        label.label(for='incidentLocationState') State
+                        .control
+                            input#incidentLocationState.input(name='incidentLocationState' type='text')
+                    .column
+                        label.label(for='incidentLocationPostalCode') Zip Code
+                        .control
+                            input#incidentLocationPostalCode.input(name='incidentLocationPostalCode' type='number')
+            hr
+            .field
+                label.label(for='facilityLocationDamaged')
+                    | Location (Specify the exact type of location/facility
+                    | damaged,
+                    | listing multiple locations/facilities if necessary. Ex. maintenance garage, sports field)
+                .control
+                    input#facilityLocationDamaged.input(name='facilityLocationDamaged' type='text')
+            hr
+            .field
+                label.label(for='primaryLocationOfDamage')
+                    | Primary location (Identify the exact area of damage.
+                    | Ex. tool
+                    | storage, batting cage)
+                .control
+                    input#primaryLocationOfDamage.input(name='primaryLocationOfDamage' type='text')
+            hr
+            .field
+                label.label(for='estimateValueOfLoss') Estimate of loss
+                .control
+                    input#estimateValueOfLoss.input(name='estimateValueOfLoss' type='text')
+            hr
+            .field
+                label.label(for='contactPersonName') Contact person at facility
+                .control
+                    input#contactPersonName.input(name='contactPersonName' type='text')
+            hr
+            .field
+                label.label(for='contactPersonEmail') Contact person&apos;s email
+                .control
+                    input#contactPersonEmail.input(name='contactPersonEmail' type='text')
+            hr
+            .field
+                label.label(for='contactPersonPhoneNumber') Contact person&apos;s phone number
+                .control
+                    input#contactPersonPhoneNumber.input(name='contactPersonPhoneNumber' type='text')
+            hr
+            //- TODO: Need to fix this section to be able to capture the form fields
+            .field
+                label.label Was damage caused by third-party (non-agency) individual?
+                label.radio
+                    input(name='damageCausedByThirdParty' type='radio' value='yes')
+                    |                     Yes
+                label.radio
+                    input(name='damageCausedByThirdParty' type='radio' value='no')
+                    |                     No
+                label.radio
+                    input(name='damageCausedByThirdParty' type='radio' value='unknown')
+                    |                     Unknown
+            .field
+                label.label
+                    | Has the party responsible for damage been identified? If yes, provide the following
+                    | contact information for the person or persons identified:
+            .field
+                .columns
+                    .column
+                        label.label(for='responsiblePartyName') Name
+                        .control
+                            input#responsiblePartyName.input(name='responsiblePartyName' type='text')
+                    .column
+                        label.label(for='responsiblePartyAddress') Street Address
+                        .control
+                            input#responsiblePartyAddress.input(name='responsiblePartyAddress' placeholder='123 Name St' type='text')
+            .field
+                .columns
+                    .column
+                        label.label(for='responsiblePartyCity') City
+                        .control
+                            input#responsiblePartyCity.input(name='responsiblePartyCity' type='text')
+                    .column
+                        label.label(for='responsiblePartyState') State
+                        .control
+                            input#responsiblePartyState.input(name='responsiblePartyState' type='text')
+                    .column
+                        label.label(for='responsiblePartyPostalCode') Zip Code
+                        .control
+                            input#responsiblePartyPostalCode.input(name='responsiblePartyPostalCode' type='number')
+            hr
+            //- TODO: Need to also fix this section to ensure form fields get captured
+            .field
+                label.label Has a police agency conducted an investigation?
+                label.radio
+                    input(name='policeAgencyInvolved' type='radio' value='yes')
+                    |                     Yes
+                label.radio
+                    input(name='policeAgencyInvolved' type='radio' value='no')
+                    |                     No
+                label.radio
+                    input(name='policeAgencyInvolved' type='radio' value='unknown')
+                    |                     Unknown
+            .field
+                .columns
+                    .column
+                        label.label(for='policeAgencyName')
+                            | What police agency investigated the
+                            | incident?
+                        .control
+                            input#policeAgencyName.input(name='policeAgencyName' type='text')
+                    .column
+                        label.label(for='policeReportNumber') What is the police report number?
+                        .control
+                            input#policeReportNumber.input(name='policeReportNumber' type='text')
+            .field
+                label.label(for='criminalChargesPressed')
+                    | Were criminal charges brought against the responsible
+                    | party? If yes,
+                    | what were the charges?
+                .control
+                    input#criminalChargesPressed.input(name='criminalChargesPressed' type='text')
+            hr
+            .buttons
+                button.button.is-info(type='submit') Submit
+                button.button.is-warning(type='reset') Reset

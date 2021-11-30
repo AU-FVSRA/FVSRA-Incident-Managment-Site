@@ -1,0 +1,417 @@
+section.section
+    .container
+        form
+            .message.is-info.has-text-centered
+                .message-body
+                    figure.image.is-128x128
+                        img.is-rounded(alt='PDRMA_LOGO_ROUNDED' src='https://media-exp1.licdn.com/dms/image/C4E0BAQHJeEACfvB0WQ/company-logo_200_200/0/1623763985456?e=2159024400&v=beta&t=6P9gEX5E-fAXw32TdOXnFY2iLws01efvqMzBCHFp1VE')
+                    h1.title Park District Risk Management Agency (Form 04)
+                    p.subtitle Employee Injury Report
+                    p.subtitle Attorney/Client Privileged Document
+            .field
+                label.label Complete an Employee Injury Report for each employee injured.
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='agencyName') Agency Name
+                        .control
+                            input#agencyName.input(name='agencyName' placeholder='Fox Valley Special Recreation' type='text' value='Fox Valley Special Recreation')
+                    .column
+                        label.label(for='todaysDate') Today&apos;s Date
+                        .control
+                            input#todaysDate.input(name='todaysDate' type='date')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='dateOfIncident') Date of Incident
+                        .control
+                            input#dateOfIncident.input(name='dateOfIncident' type='date')
+                    .column
+                        label.label(for='timeOfIncident') Time of Incident
+                        .control
+                            input#timeOfIncident.input(name='timeOfIncident' type='time')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='nameOfPersonCompletingForm') Name of Person Completing Report
+                        .control
+                            input#nameOfPersonCompletingForm.input(name='nameOfPersonCompletingForm' type='text')
+                    .column
+                        label.label(for='titleOfPersonCompletingForm') Title of Person Completing Report
+                        .control
+                            input#titleOfPersonCompletingForm.input(name='titleOfPersonCompletingForm' type='text')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='businessPhoneNumber') Business Phone
+                        .control
+                            input#businessPhoneNumber.input(name='businessPhoneNumber' placeholder='(123) 456-7890' type='number')
+                    .column
+                        label.label(for='businessEmail') Business Email
+                        .control
+                            input#businessEmail.input(name='businessEmail' placeholder='user@email.com/.org' type='text')
+            hr
+            .field
+                label.label(for='howDidIncidentOccur') How Did the Incident Occur?
+                .control
+                    input#howDidIncidentOccur.input(name='howDidIncidentOccur' placeholder='Provide a one-line factual description' type='text')
+            hr
+            .field
+                label.label(for='nameOfLocationIncidentOccurred')
+                    | Name of the location (park, pool, community
+                    | center; Ex. Smith Pool,
+                    | Johnson Community Center) or nearest intersection where the incident occurred
+                .control
+                    input#nameOfLocationIncidentOccurred.input(name='nameOfLocationIncidentOccurred' type='text')
+            hr
+            .field
+                label.label
+                    | Is there an address for incident location? If yes, please provide the
+                    | following:
+            .field
+                label.label(for='incidentStreetAddress') Street Address
+                .control
+                    input#incidentStreetAddress.input(name='incidentStreetAddress' placeholder='123 Name St' type='text')
+            .field
+                .columns
+                    .column
+                        label.label(for='incidentCity') City
+                        .control
+                            input#incidentCity.input(name='incidentCity' type='text')
+                    .column
+                        label.label(for='incidentState') State
+                        .control
+                            input#incidentState.input(name='incidentState' type='text')
+                    .column
+                        label.label(for='incidentPostalCode') Zip Code
+                        .control
+                            input#incidentPostalCode.input(name='incidentPostalCode' type='number')
+            hr
+            .field
+                label.label(for='incidentFacilityLocation')
+                    | Location (Specify the exact type of
+                    | location/facility where injury
+                    | occurred. Ex. maintenance garage, sports field, aquatic outdoor, golf course, etc.)
+                .control
+                    input#incidentFacilityLocation.input(name='incidentFacilityLocation' type='text')
+            hr
+            .field
+                label.label(for='incidentPrimaryLocation')
+                    | Primary location (Specify exact location. Ex. lap
+                    | pool, cart storage,
+                    | classroom, pavilion)
+                .control
+                    input#incidentPrimaryLocation.input(name='incidentPrimaryLocation' type='text')
+            hr
+            .field
+                label.label(for='employerFEIN') Employer&apos;s FEIN
+                .control
+                    input#employerFEIN.input(name='employerFEIN' type='text')
+            hr
+            .field
+                label.label Did the employee miss more than three (3) scheduled workdays?
+                label.radio
+                    input(name='missedMoreThanThreeWorkDays' type='radio' value='yes')
+                    |                     Yes
+                label.radio
+                    input(name='missedMoreThanThreeWorkDays' type='radio' value='no')
+                    |                     No
+                label.radio
+                    input(name='missedMoreThanThreeWorkDays' type='radio' value='unknown')
+                    |                     Unknown
+            hr
+            .field
+                label.label(for='whatWasEmployeeDoing')
+                    | What was the employee doing when the accident
+                    | occurred?
+                .control
+                    input#whatWasEmployeeDoing.input(name='whatWasEmployeeDoing' type='text')
+            hr
+            .field
+                label.label(for='howDidIncidentOccurDetailed') How did the incident occur?
+                .control
+                    textarea#howDidIncidentOccurDetailed.textarea(name="howDidIncidentOccurDetailed" placeholder='Provide a detailed factual description')
+            hr
+            .field
+                .columns
+                    .column
+                        label.label(for='employeeLastName') Employee last name
+                        .control
+                            input#employeeLastName.input(name='employeeLastName' type='text')
+                    .column
+                        label.label(for='employeeFirstName') First name
+                        .control
+                            input#employeeFirstName.input(name='employeeFirstName' type='text')
+            .field
+                label.label(for='employeeAddress') Address
+                .control
+                    input#employeeAddress.input(name='employeeAddress' type='text')
+            .field
+                .columns
+                    .column
+                        label.label(for='employeeCity') City
+                        .control
+                            input#employeeCity.input(name='employeeCity' type='text')
+                    .column
+                        label.label(for='employeeState') State
+                        .control
+                            input#employeeState.input(name='employeeState' type='text')
+                    .column
+                        label.label(for='employeePostalCode') Zip Code
+                        .control
+                            input#employeePostalCode.input(name='employeePostalCode' type='number')
+                .field
+                    .columns
+                        .column
+                            label.label(for='employeeHomePhoneNumber') Home phone #
+                            .control
+                                input#employeeHomePhoneNumber.input(name='employeeHomePhoneNumber' placeholder='(123) 456-7890' type='number')
+                        .column
+                            label.label(for='employeeWorkPhoneNumber') Work phone #
+                            .control
+                                input#employeeWorkPhoneNumber.input(name='employeeWorkPhoneNumber' placeholder='(123) 456-7890)' type='number')
+                        .column
+                            label.label(for='EmployeeCellPhoneNumber') Cell phone #
+                            .control
+                                input#EmployeeCellPhoneNumber.input(name='EmployeeCellPhoneNumber' placeholder='(123) 456-7890' type='number')
+                .field
+                    .columns
+                        .column
+                            label.label(for='employeeBestContactNumber') Best number to contact employee
+                            .control
+                                input#employeeBestContactNumber.input(name='employeeBestContactNumber' placeholder='(123) 456-7890' type='text')
+                        .column
+                            label.label(for='employeeEmailAddress') Email
+                            .control
+                                input#employeeEmailAddress.input(name='employeeEmailAddress' placeholder='user@email.com/.org' type='text')
+                .field
+                    .columns
+                        .column
+                            label.label(for='employeeSSN') Social security number
+                            .control
+                                input#employeeSSN.input(name='employeeSSN' placeholder='xxx-xx-xxxx' type='number')
+                        .column
+                            label.label(for='employeeDOB') Date of birth
+                            .control
+                                input#employeeDOB.input(name='employeeDOB' type='date')
+                        .column
+                            .field
+                                label.label Gender
+                                label.radio
+                                    input(name='employeeGender' type='radio' value='male')
+                                    |                                     Male
+                                label.radio
+                                    input(name='employeeGender' type='radio' value='female')
+                                    |                                     Female
+                                //
+                                  Not currently an option on PDRMA forms
+                                  <label class="radio">
+                                  <input name="employeeGender" type="radio">
+                                  Non-binary
+                                  </label>
+                .field
+                    .columns
+                        .column
+                            label.label(for='employeeMaritalStatus') Marital status
+                            .control
+                                input#employeeMaritalStatus.input(name='employeeMaritalStatus' placeholder='divorced/married/single/unknown' type='text')
+                        .column
+                            label.label(for='employeeNumOfDependents') Number of dependents
+                            .control
+                                input#employeeNumOfDependents.input(name='employeeNumOfDependents' type='number')
+                        .column
+                            .field
+                                label.label Does employee speak English?
+                                label.radio
+                                    input(name='employeeEnglishStatus' type='radio' value='yes')
+                                    |                                     Yes
+                                label.radio
+                                    input(name='employeeEnglishStatus' type='radio' value='no')
+                                    |                                     No
+                .field
+                    .columns
+                        .column
+                            label.label(for='employeeAvgWeeklyPage') Average weekly wage
+                            .control
+                                input#employeeAvgWeeklyPage.input(name='employeeAvgWeeklyPage' type='number')
+                        .column
+                            label.label(for='employeeJobTitle') Job title/occupation
+                            .control
+                                input#employeeJobTitle.input(name='employeeJobTitle' type='text')
+                .field
+                    label.label What is the employee&apos;s employment status?
+                    label.radio
+                        input(name='employeeEmploymentStatus' type='radio' value='full-time')
+                        |                         Permanent full-time
+                    label.radio
+                        input(name='employeeEmploymentStatus' type='radio' value='part-time')
+                        |                         Permanent part-time
+                    label.radio
+                        input(name='employeeEmploymentStatus' type='radio' value='seasonal')
+                        |                         Seasonal
+                    label.radio
+                        input(name='employeeEmploymentStatus' type='radio' value='intern')
+                        |                         Intern
+                    label.radio
+                        input(name='employeeEmploymentStatus' type='radio' value='other')
+                        |                         Other
+                .field
+                    .columns
+                        .column
+                            label.label(for='employeeDateHired') Date hired
+                            .control
+                                input#employeeDateHired.input(name='employeeDateHired' type='date')
+                    label.label What is the employee&apos;s tenure? (length of employment)
+                    label.radio
+                        input(name='employeeTenure' type='radio' value='lessThan1')
+                        |                         Less than 1 yr.
+                    label.radio
+                        input(name='employeeTenure' type='radio' value='1to3')
+                        |                         1-3 yrs.
+                    label.radio
+                        input(name='employeeTenure' type='radio' value='4to10')
+                        |                         4-10 yrs.
+                    label.radio
+                        input(name='employeeTenure' type='radio' value='11to19')
+                        |                         11-19 yrs.
+                    label.radio
+                        input(name='employeeTenure' type='radio' value='20plus')
+                        |                         More than 20 yrs.
+                .field
+                    label.label(for='employeeTimeBeganWorkOnDayOfAccident')
+                        | Time employee began work on day of
+                        | incident
+                    .control
+                        input#employeeTimeBeganWorkOnDayOfAccident.input(name='employeeTimeBeganWorkOnDayOfAccident' type='time')
+                .field
+                    label.label(for='employeeLastDateWorkerPriorToAccident')
+                        | Last date employee worked prior to
+                        | date of incident
+                    .control
+                        input#employeeLastDateWorkerPriorToAccident.input(name='employeeLastDateWorkerPriorToAccident' type='date')
+                .field
+                    label.label(for='employeeDeathDate')
+                        | If the employee died as a result of the accident, give
+                        | the date
+                        | of death.
+                    .control
+                        input#employeeDeathDate.input(name='employeeDeathDate' type='date')
+                .field
+                    label.label Did the incident occur on agency premises?
+                    label.radio
+                        input(name='injuryOnAgencyPremise' type='radio' value='yes')
+                        |                         Yes
+                    label.radio
+                        input(name='injuryOnAgencyPremise' type='radio' value='yes')
+                        |                         No
+                    label.radio
+                        input(name='injuryOnAgencyPremise' type='radio' value='unknown')
+                        |                         Unknown
+                .field
+                    label.label Injury or illness?
+                    label.radio
+                        input(name='injuryOrIllness' type='radio' value='injury')
+                        |                         Injury
+                    label.radio
+                        input(name='injuryOrIllness' type='radio' value='illness')
+                        |                         Illness
+                .field
+                    label.label(for='describeInjuryOrIllness')
+                        | Describe the injury or illness (affected body
+                        | part and type of
+                        | injury; Ex. contusion, bruise, laceration, sprain, break, etc.)
+                    .control
+                        textarea#describeInjuryOrIllness.textarea(name="describeInjuryOrIllness" placeholder='Provide a detailed factual description')
+                .field
+                    label.label(for='objectOrSubstanceThatCausedHarm')
+                        | What object or substance, if any,
+                        | directly harmed the
+                        | employee?
+                    .control
+                        input#objectOrSubstanceThatCausedHarm.input(name='objectOrSubstanceThatCausedHarm' type='text')
+            hr
+            .field
+                label.label Did the injured employee seek medical attention?
+                label.radio
+                    input(name='didEmployeeSeekMedicalHelp' type='radio' value='yes')
+                    |                     Yes
+                label.radio
+                    input(name='didEmployeeSeekMedicalHelp' type='radio' value='no')
+                    |                     No
+                label.radio
+                    input(name='didEmployeeSeekMedicalHelp' type='radio' value='unknown')
+                    |                     Unknown
+            hr
+            .field
+                label.label If yes, was the treatment given away from the worksite?
+                label.radio
+                    input(name='wasTreatmentGivenAwayFromWorksite' type='radio' value='yes')
+                    |                     Yes
+                label.radio
+                    input(name='wasTreatmentGivenAwayFromWorksite' type='radio' value='no')
+                    |                     No
+                label.radio
+                    input(name='wasTreatmentGivenAwayFromWorksite' type='radio' value='unknown')
+                    |                     Unknown
+            hr
+            .field
+                label.label Was the employee treated in an emergency room?
+                label.radio
+                    input(name='wasEmployeeTreatedInER' type='radio' value='yes')
+                    |                     Yes
+                label.radio
+                    input(name='wasEmployeeTreatedInER' type='radio' value='no')
+                    |                     No
+                label.radio
+                    input(name='wasEmployeeTreatedInER' type='radio' value='unknown')
+                    |                     Unknown
+            hr
+            .field
+                label.label Was the employee hospitalized overnight as an inpatient?
+                label.radio
+                    input(name='wasEmployeeHospitalizedOvernightAsInpatient' type='radio' value='yes')
+                    |                     Yes
+                label.radio
+                    input(name='wasEmployeeHospitalizedOvernightAsInpatient' type='radio' value='no')
+                    |                     No
+                label.radio
+                    input(name='wasEmployeeHospitalizedOvernightAsInpatient' type='radio' value='unknown')
+                    |                     Unknown
+            hr
+            .field
+                label.label(for='treatingPhysicianName')
+                    | Name of treating physician, health care provider, or
+                    | emergency
+                    | room
+                .control
+                    input#treatingPhysicianName.input(name='treatingPhysicianName' type='text')
+            .field
+                label.label(for='treatingPhysicianAddress') Address
+                .control
+                    input#treatingPhysicianAddress.input(name='treatingPhysicianAddress' placeholder='123 Name St' type='text')
+            .field
+                .columns
+                    .column
+                        label.label(for='treatingPhysicianCity') City
+                        .control
+                            input#treatingPhysicianCity.input(name='treatingPhysicianCity' type='text')
+                    .column
+                        label.label(for='treatingPhysicianState') State
+                        .control
+                            input#treatingPhysicianState.input(name='treatingPhysicianState' type='text')
+                    .column
+                        label.label(for='treatingPhysicianPostalCode') Zip Code
+                        .control
+                            input#treatingPhysicianPostalCode.input(name='treatingPhysicianPostalCode' type='number')
+                    .column
+                        label.label(for='treatingPhysicianPhoneNumber') Phone Number
+                        .control
+                            input#treatingPhysicianPhoneNumber.input(name='treatingPhysicianPhoneNumber' placeholder='(123) 456-7890' type='number')
+            hr
+            .buttons
+                button.button.is-info(type='submit') Submit
+                button.button.is-warning(type='reset') Reset

@@ -9,7 +9,7 @@ nav.navbar.is-fixed-top.is-light(aria-label='main navigation' role='navigation')
             span(aria-hidden='true')
     #mainSiteNavBar.navbar-menu
         .navbar-start
-            a.navbar-item
+            a.navbar-item(href='/')
                 | Home
             .navbar-item.has-dropdown.is-hoverable
                 a.navbar-link
@@ -22,6 +22,9 @@ nav.navbar.is-fixed-top.is-light(aria-label='main navigation' role='navigation')
                     hr.navbar-divider
                     a.navbar-item
                         | Report an issue
+            if(user.isLoggedIn && user.isAdmin)
+                a.navbar-item(href='/admin/reports')
+                    | Reports
 
         if !user.isLoggedIn
             .navbar-end

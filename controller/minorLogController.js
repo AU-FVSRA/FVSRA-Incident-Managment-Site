@@ -18,19 +18,55 @@ exports.index_test_page = function (req, res) { //might change this later
 
 exports.get_form_page = function (req, res) {
     let selected_form = req.body.formSelection;
-    let pugOptions = {user: {isLoggedIn: false}, copyright_current_year: new Date().getFullYear(), pretty: true}
+    let pugOptions = {
+        user: {isLoggedIn: true, isAdmin: true},
+        copyright_current_year: new Date().getFullYear(),
+        pretty: true
+    }
 
     // No rendering done here????
     // Where should this be rendered? (Do a res.redirect() to the form page?)
     switch (selected_form) {
         case "minorInjuryForm":
+            pugOptions.formTitle = "minorInjuryForm";
             res.render("MinorInjuryReport.pug", pugOptions);
             break;
+
+        case "pdrmaForm01":
+            pugOptions.formTitle = "pdrmaForm01";
+            res.render("pdrmaForm.pug", pugOptions);
+            break;
+
+        case "pdrmaForm02":
+            pugOptions.formTitle = "pdrmaForm02";
+            res.render("pdrmaForm.pug", pugOptions);
+            break;
+
+        case "pdrmaForm03":
+            pugOptions.formTitle = "pdrmaForm03";
+            res.render("pdrmaForm.pug", pugOptions);
+            break;
+
+        case "pdrmaForm04":
+            pugOptions.formTitle = "pdrmaForm04";
+            res.render("pdrmaForm.pug", pugOptions);
+            break;
+
+        case "pdrmaForm04E":
+            pugOptions.formTitle = "pdrmaForm04E";
+            res.render("pdrmaForm.pug", pugOptions);
+            break;
+
         default:
-            // res.render("FormSuccessMessage.pug", {pretty: true});
             res.render("404.pug", {pretty: true});
     }
 }
+
+exports.get_admin_page = function (req, res) {
+    res.render('admin.pug', {
+        user: {isLoggedIn: true, isAdmin: true},
+    });
+};
 
 //-----------------------------------------------
 

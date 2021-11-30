@@ -1,0 +1,739 @@
+section.section
+    .container
+        form.form-horizontal
+            .message.is-info.has-text-centered
+                .message-body
+                    figure.image.is-128x128
+                        img.is-rounded(alt='PDRMA_LOGO_ROUNDED' src='https://media-exp1.licdn.com/dms/image/C4E0BAQHJeEACfvB0WQ/company-logo_200_200/0/1623763985456?e=2159024400&v=beta&t=6P9gEX5E-fAXw32TdOXnFY2iLws01efvqMzBCHFp1VE')
+                    h1.title Park District Risk Management Agency (Form 02)
+                    p.subtitle Vehicle Accident Report
+                    p.subtitle Attorney/Client Privileged Document
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='agencyName') Agency Name
+                        .control
+                            input#agencyName.input(name='agencyName' type='text' value='Fox Valley Special Recreation Agency')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='todaysDate') Today&apos;s date
+                        .control
+                            input#todaysDate.input(name='todaysDate' type='date' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='dateOfIncident') Date of incident
+                        .control
+                            input#dateOfIncident.input(name='dateOfIncident' placeholder='(mm/dd/yyyy)' type='date' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='timeOfIncident') Time of incident
+                        .control
+                            input#timeOfIncident.input(name='timeOfIncident' placeholder='(hh/mm a.m./p.m.)' type='time' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='nameOfPersonCompletingReport')
+                            | Name of person completing the
+                            | report
+                        .control
+                            input#nameOfPersonCompletingReport.input(name='nameOfPersonCompletingReport' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='titleOfPersonCompletingReport')
+                            | Title of person completing the
+                            | report
+                        .control
+                            input#titleOfPersonCompletingReport.input(name='titleOfPersonCompletingReport' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='businessPhoneNumber') Business phone number
+                        .control
+                            input#businessPhoneNumber.input(name='businessPhoneNumber' placeholder='630.907.114' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='businessEmail') Business email
+                        .control
+                            input#businessEmail.input(name='businessEmail' placeholder='jasonp@rsvp.org' type='text' value='')
+            // Text input
+            .field
+                label.label(for='howDidIncidentOccur')
+                    | How did the incident occur? (Provide a brief, factual
+                    | description; do
+                    | not speculate fault, etc.)
+                .control
+                    input#howDidIncidentOccur.input(name='howDidIncidentOccur' type='text' value='')
+            // Text input
+            .field
+                label.label(for='nameOfLocationWhereIncidentOccurred')
+                    | Name of the location
+                    | (street/road/highway) or nearest
+                    | intersection where the incident occurred.
+                .control
+                    input#nameOfLocationWhereIncidentOccurred.input(name='nameOfLocationWhereIncidentOccurred' type='text' value='')
+            // Text input
+            .field
+                label.label(for='incidentAddressStreet') Street address
+                .control
+                    input#incidentAddressStreet.input(name='incidentAddressStreet' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='incidentAddressCity') City
+                        .control
+                            input#incidentAddressCity.input(name='incidentAddressCity' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='incidentAddressState') State
+                        .control
+                            input#incidentAddressState.input(name='incidentAddressState' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='incidentAddressPostalCode') Zip code
+                        .control
+                            input#incidentAddressPostalCode.input(name='incidentAddressPostalCode' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='incidentLocation') Location
+                .control
+                    .select
+                        select#incidentLocation(name='incidentLocation')
+                            option(value='1') Offsite (non-agency owned)
+                            option(value='2') On agency property
+            // Select Basic
+            .field
+                label.label(for='primaryLocation') Primary location
+                .control
+                    .select
+                        select#primaryLocation(name='primaryLocation')
+                            option(value='1') Highway/roadway
+                            option(value='2') Parking lot
+                            option(value='3') Other
+            // Select Basic
+            .field
+                label.label(for='wasAgencyVehicleOccupied') Was the agency vehicle occupied?
+                .control
+                    .select
+                        select#wasAgencyVehicleOccupied(name='wasAgencyVehicleOccupied')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='agencyDriverLastName') Agency driver last name
+                .control
+                    input#agencyDriverLastName.input(name='agencyDriverLastName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='agencyDriverFirstName') First Name
+                .control
+                    input#agencyDriverFirstName.input(name='agencyDriverFirstName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='agencyDriverAddress') Street address
+                .control
+                    input#agencyDriverAddress.input(name='agencyDriverAddress' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='agencyDriverCity') City
+                        .control
+                            input#agencyDriverCity.input(name='agencyDriverCity' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='agencyDriverState') State
+                        .control
+                            input#agencyDriverState.input(name='agencyDriverState' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='agencyDriverPostalCode') Zip code
+                        .control
+                            input#agencyDriverPostalCode.input(name='agencyDriverPostalCode' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='agencyDriverHomePhoneNumber') Home phone #
+                        .control
+                            input#agencyDriverHomePhoneNumber.input(name='agencyDriverHomePhoneNumber' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='agencyDriverWorkPhoneNumber') Work phone #
+                        .control
+                            input#agencyDriverWorkPhoneNumber.input(name='agencyDriverWorkPhoneNumber' type='text')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='agencyDriverCellPhoneNumber') Cell phone #
+                        .control
+                            input#agencyDriverCellPhoneNumber.input(name='agencyDriverCellPhoneNumber' type='text' value='')
+            .field
+                label.label(for='agencyDriverEmailAddress') Email
+                .control
+                    input#agencyDriverEmailAddress.input(name='agencyDriverEmailAddress' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='isDriverAgencyEmployee') Is this driver an employee?
+                .control
+                    .select
+                        select#isDriverAgencyEmployee(name='isDriverAgencyEmployee')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='agencyDriverTitle') If Yes, enter job title of employee
+                .control
+                    input#agencyDriverTitle.input(name='agencyDriverTitle' type='text' value='')
+            // Multiple Checkboxes
+            .field
+                label.label Identify the type of drive
+                .control
+                    label.checkbox(for='typeOfEmployee_FullTime')
+                        input#typeOfEmployee_FullTime(name='typeOfEmployee_FullTime' type='checkbox' value='fullTimeEmployee')
+                        |                         Full-time employee
+                    label.checkbox(for='typeOfEmployee_PartTime')
+                        input#typeOfEmployee_PartTime(name='typeOfEmployee_PartTime' type='checkbox' value='partTimeEmployee')
+                        |                         Part-time employee
+                    label.checkbox(for='typeOfEmployee_Seasonal')
+                        input#typeOfEmployee_Seasonal(name='typeOfEmployee_Seasonal' type='checkbox' value='seasonalEmployee')
+                        |                         Seasonal employee
+                    label.checkbox(for='typeOfEmployee_Intern')
+                        input#typeOfEmployee_Intern(name='typeOfEmployee_Intern' type='checkbox' value='intern')
+                        |                         Intern
+                    label.checkbox(for='typeOfEmployee_Volunteer')
+                        input#typeOfEmployee_Volunteer(name='typeOfEmployee_Volunteer' type='checkbox' value='volunteer')
+                        |                         Volunteer
+                    label.checkbox(for='typeOfEmployee_NonAgencyEmployee')
+                        input#typeOfEmployee_NonAgencyEmployee(name='typeOfEmployee_NonAgencyEmployee' type='checkbox' value='nonAgencyEmployee')
+                        |                         Non-agency employee
+                    label.checkbox(for='typeOfEmployee_SpouseOrFamilyMember')
+                        input#typeOfEmployee_SpouseOrFamilyMember(name='typeOfEmployee_SpouseOrFamilyMember' type='checkbox' value='spouseOrFamilyMember')
+                        |                         Spouse/family member
+            .columns
+                .column
+                    .field
+                        label.label(for='agencyVehicleVIN') Agency vehicle VIN
+                        .control
+                            input#agencyVehicleVIN.input(name='agencyVehicleVIN' type='text' value='')
+                .column
+                    .field
+                        label.label(for='agencyVehicleYear') Agency vehicle year
+                        .control
+                            input#agencyVehicleYear.input(name='agencyVehicleYear' type='text' value='')
+                .column
+                    .field
+                        label.label(for='agencyVehicleMake') Agency vehicle make
+                        .control
+                            input#agencyVehicleMake.input(name='agencyVehicleMake' type='text' value='')
+                .column
+                    .field
+                        label.label(for='agencyVehicleLicenseNumber') Agency License Plate Number
+                        .control
+                            input#agencyVehicleLicenseNumber.input(name='agencyVehicleLicenseNumber' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='isVehicleDrivable') Is vehicle drivable?
+                .control
+                    .select
+                        select#isVehicleDrivable(name='isVehicleDrivable')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='currentLocationOfVehicle') If no, provide current location of vehicle
+                .control
+                    input#currentLocationOfVehicle.input(name='currentLocationOfVehicle' type='text' value='')
+            // Text input
+            .field
+                label.label(for='vehicleAreaOfDamage') Area of damage
+                .control
+                    input#vehicleAreaOfDamage.input(name='vehicleAreaOfDamage' type='text' value='')
+            // Text input
+            .field
+                label.label(for='vehicleEstimatedRepairCost') Estimated repair cost
+                .control
+                    input#vehicleEstimatedRepairCost.input(name='vehicleEstimatedRepairCost' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='wasTrailerInvolved') Was a trailer involved?
+                .control
+                    .select
+                        select#wasTrailerInvolved(name='wasTrailerInvolved')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            .columns
+                .column
+                    .field
+                        label.label(for='trailerYear') Trailer year
+                        .control
+                            input#trailerYear.input(name='trailerYear' type='text' value='')
+                .column
+                    .field
+                        label.label(for='trailerMake') Trailer make
+                        .control
+                            input#trailerMake.input(name='trailerMake' type='text' value='')
+                .column
+                    .field
+                        label.label(for='trailerModel') Trailer model
+                        .control
+                            input#trailerModel.input(name='trailerModel' type='text' value='')
+                .column
+                    .field
+                        label.label(for='trailerLicense') Trailer License Plate Number
+                        .control
+                            input#trailerLicense.input(name='trailerLicense' type='text' value='')
+            // Text input
+            .field
+                label.label(for='trailerAreaOfDamage') Trailer area of damage
+                .control
+                    input#trailerAreaOfDamage.input(name='ttrailerAreaOfDamage' type='text' value='')
+            // Text input
+            .field
+                label.label(for='trailerCurrentLocation') Current location of trailer
+                .control
+                    input#trailerCurrentLocation.input(name='trailerCurrentLocation' type='text' value='')
+            // Text input
+            .field
+                label.label(for='trailerEstimatedRepairCost') Estimated repair cost of trailer
+                .control
+                    input#trailerEstimatedRepairCost.input(name='trailerEstimatedRepairCost' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='policeInvestigationOccurred')
+                    | Has a police agency conducted an investigation?
+                    | If yes,
+                    | provide the following information.
+                .control
+                    .select
+                        select#policeInvestigationOccurred(name='policeInvestigationOccurred')
+                            option(value='yes') Yes
+                            option(value='no') No
+            // Text input
+            .field
+                label.label(for='policeAgencyName') What police agency investigated the incident?
+                .control
+                    input#policeAgencyName.input(name='policeAgencyName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='policeReportNumber') Police report number
+                .control
+                    input#policeReportNumber.input(name='policeReportNumber' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='agencyDriverTicketedArrestedOrCited')
+                    | Was the agency driver ticketed, arrested
+                    | or cited for
+                    | violation(s)?
+                .control
+                    .select
+                        select#agencyDriverTicketedArrestedOrCited(name='agencyDriverTicketedArrestedOrCited')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='agencyDriverCitationDetails')
+                    | If yes, provide details of the ticket, arrest or
+                    | violation(s).
+                .control
+                    textarea#agencyDriverCitationDetails.textarea(name='agencyDriverCitationDetails')
+            // Multiple Checkboxes
+            .field
+                label.label
+                    | Identify other people involved in the accident. (Make additional copies of
+                    | this section if needed.) How was the person involved in the accident? (Check all that
+                    | apply.)
+                .control
+                    label.checkbox(for='typeOfPersonInvolved_driver')
+                        input#typeOfPersonInvolved_driver(name='typeOfPersonInvolved_driver' type='checkbox' value='driverOfVehicle')
+                        |                         Driver of other vehicle
+                    label.checkbox(for='typeofPersonInvolved_VehicleOwner')
+                        input#typeofPersonInvolved_VehicleOwner(name='typeofPersonInvolved_VehicleOwner' type='checkbox' value='ownerOfOtherVehicle')
+                        |                         Owner of other vehicle
+                    label.checkbox(for='typeofPersonInvolved_Pedestrian')
+                        input#typeofPersonInvolved_Pedestrian(name='typeofPersonInvolved_Pedestrian' type='checkbox' value='pedestrian')
+                        |                         Pedestrian
+                    label.checkbox(for='typeofPersonInvolved_InjuredPerson')
+                        input#typeofPersonInvolved_InjuredPerson(name='typeofPersonInvolved_InjuredPerson' type='checkbox' value='injuredPerson')
+                        |                         Injured person
+                    label.checkbox(for='typeofPersonInvolved_PassengerOfAgencyVehicle')
+                        input#typeofPersonInvolved_PassengerOfAgencyVehicle(name='typeofPersonInvolved_PassengerOfAgencyVehicle' type='checkbox' value='passengerOfAgencyVehicle')
+                        |                         Passenger of agency vehicle
+                    label.checkbox(for='typeofPersonInvolved_OwnerOfProperty')
+                        input#typeofPersonInvolved_OwnerOfProperty(name='typeofPersonInvolved_OwnerOfProperty' type='checkbox' value='ownerOfInvolvedProperty')
+                        |                         Owner of involved property
+                    label.checkbox(for='typeofPersonInvolved_PassengerOfOtherVehicle')
+                        input#typeofPersonInvolved_PassengerOfOtherVehicle(name='typeofPersonInvolved_PassengerOfOtherVehicle' type='checkbox' value='passengerOfOtherVehicle')
+                        |                         Passenger of other vehicle
+            // Text input
+            .field
+                label.label(for='claimantLastName') Last name or business name
+                .control
+                    input#claimantLastName.input(name='claimantLastName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='claimantFirstName') First name (not necessary for business)
+                .control
+                    input#claimantFirstName.input(name='claimantFirstName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='claimantAddress') Address
+                .control
+                    input#claimantAddress.input(name='claimantAddress' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='claimantCity') City
+                        .control
+                            input#claimantCity.input(name='claimantCity' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='claimantState') State
+                        .control
+                            input#claimantState.input(name='claimantState' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='claimantPostalCode') Zip
+                        .control
+                            input#claimantPostalCode.input(name='claimantPostalCode' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='textinput-55') Home phone #
+                        .control
+                            input#textinput-55.input(name='textinput-55' type='text')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='claimantWorkPhoneNumber') Work phone #
+                        .control
+                            input#claimantWorkPhoneNumber.input(name='claimantWorkPhoneNumber' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='claimantCellPhoneNumber') Cell phone #
+                        .control
+                            input#claimantCellPhoneNumber.input(name='claimantCellPhoneNumber' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='claimantVehicleMake') Vehicle make
+                        .control
+                            input#claimantVehicleMake.input(name='claimantVehicleMake' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='claimantVehicleModel') Vehicle model
+                        .control
+                            input#claimantVehicleModel.input(name='claimantVehicleModel' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='claimantVehicleYear') Vehicle year
+                        .control
+                            input#claimantVehicleYear.input(name='claimantVehicleYear' type='text' value='')
+            // Text input
+            .field
+                label.label(for='claimantVehicleAreaOfDamage') Area of damage
+                .control
+                    input#claimantVehicleAreaOfDamage.input(name='claimantVehicleAreaOfDamage' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='claimantVehicleIsDrivable') Is vehicle driveable?
+                .control
+                    .select
+                        select#claimantVehicleIsDrivable(name='claimantVehicleIsDrivable')
+                            option(value='yes') Yes
+                            option(value='no') No
+            // Text input
+            .field
+                label.label(for='claimantVehicleCurrentLocation') If no, current location of vehicle
+                .control
+                    input#claimantVehicleCurrentLocation.input(name='claimantVehicleCurrentLocation' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='claimantVehicleExtentOfDamage') Extent of damage
+                .control
+                    .select
+                        select#claimantVehicleExtentOfDamage(name='claimantVehicleExtentOfDamage')
+                            option(value='moderate') Moderate
+                            option(value='noVisibleDamage') Nothing visible
+                            option(value='severe') Severe
+                            option(value='slight') Slight
+            // Text input
+            .field
+                label.label(for='claimantPropertyDamageDesc')
+                    | Describe the property damage (other than
+                    | vehicle)
+                .control
+                    textarea#claimantPropertyDamageDesc.textarea(name='claimantPropertyDamageDesc')
+            // Select Basic
+            .field
+                label.label(for='claimantPropertyDamageExtent')
+                    | Extent of damage to property other than
+                    | vehicle
+                .control
+                    .select
+                        select#claimantPropertyDamageExtent(name='claimantPropertyDamageExtent')
+                            option(value='moderate') Moderate
+                            option(value='noVisibleDamage') Nothing visible
+                            option(value='severe') Severe
+                            option(value='slight') Slight
+            // Text input
+            .field
+                label.label(for='injuredPersonAge') Age of injured person
+                .control
+                    input#injuredPersonAge.input(name='injuredPersonAge' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='injuredPersonSex') Sex of injured person
+                .control
+                    .select
+                        select#injuredPersonSex(name='injuredPersonSex')
+                            option(value='male') Male
+                            option(value='female') Female
+                            // <option value="non-binary">Non-Binary</option>
+            // Select Basic
+            .field
+                label.label(for='injuredPersonTransportedByParamedics')
+                    | Was the injured person transported by
+                    | paramedics?
+                .control
+                    .select
+                        select#injuredPersonTransportedByParamedics(name='injuredPersonTransportedByParamedics')
+                            option(value='yes') Yes
+                            option(value='no') No
+            // Text input
+            .field
+                label.label(for='injuredPersonTransportedLocation')
+                    | If yes, where was the injured person
+                    | taken?
+                .control
+                    input#injuredPersonTransportedLocation.input(name='injuredPersonTransportedLocation' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='injuredPersonExpectedToFileClaim')
+                    | Do you expect the injured person to file a
+                    | claim?
+                .control
+                    .select
+                        select#injuredPersonExpectedToFileClaim(name='injuredPersonExpectedToFileClaim')
+                            option(value='yes') Yes
+                            option(value='no') No
+            // Text input
+            .field
+                label.label(for='injuredPersonInjuryDesc') Describe the injury
+                .control
+                    textarea#injuredPersonInjuryDesc.textarea(name='injuredPersonInjuryDesc')
+            // Text input
+            .field
+                label.label
+                    | Identify witnesses of the accident. (Provide the following
+                    | information for each witness. Make additional copies of this page if needed.) Last name
+            // Text input
+            .field
+                label.label(for='witnessFirstName') First name
+                .control
+                    input#witnessFirstName.input(name='witnessFirstName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='witnessAddress') Address
+                .control
+                    input#witnessAddress.input(name='witnessAddress' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessCity') City
+                        .control
+                            input#witnessCity.input(name='witnessCity' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessState') State
+                        .control
+                            input#witnessState.input(name='witnessState' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessPostalCode') Zip Code
+                        .control
+                            input#witnessPostalCode.input(name='witnessPostalCode' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessHomePhoneNumber') Home phone #
+                        .control
+                            input#witnessHomePhoneNumber.input(name='witnessHomePhoneNumber' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessCellPhoneNumber') Cell phone #
+                        .control
+                            input#witnessCellPhoneNumber.input(name='witnessCellPhoneNumber' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessWorkPhoneNumber') Work phone #
+                        .control
+                            input#witnessWorkPhoneNumber.input(name='witnessWorkPhoneNumber' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='witnessToAccident')
+                    | Witness to accident? If yes, provide the following
+                    | information.
+                .control
+                    .select
+                        select#witnessToAccident(name='witnessToAccident')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Multiple Checkboxes
+            .field
+                label.label Relation to injured person or property owner:
+                .control
+                    label.checkbox(for='relationToInjuredPersonOrPropertyOwner_AgencyEmpOrVol')
+                        input#relationToInjuredPersonOrPropertyOwner_AgencyEmpOrVol(name='relationToInjuredPersonOrPropertyOwner_AgencyEmpOrVol' type='checkbox' value='agencyEmployeeOrVolunteer')
+                        |                         Agency employee or volunteer
+                    label.checkbox(for='relationToInjuredPersonOrPropertyOwner_ProgramParticipantOrParkUser')
+                        input#relationToInjuredPersonOrPropertyOwner_ProgramParticipantOrParkUser(name='relationToInjuredPersonOrPropertyOwner_ProgramParticipantOrParkUser' type='checkbox' value='anotherProgramParticipantOrParkUser')
+                        |                         Another program participant or park user
+                    label.checkbox(for='relationToInjuredPersonOrPropertyOwner_Friend')
+                        input#relationToInjuredPersonOrPropertyOwner_Friend(name='relationToInjuredPersonOrPropertyOwner_Friend' type='checkbox' value='friend')
+                        |                         Friend
+                    label.checkbox(for='relationToInjuredPersonOrPropertyOwner_Relative')
+                        input#relationToInjuredPersonOrPropertyOwner_Relative(name='relationToInjuredPersonOrPropertyOwner_Relative' type='checkbox' value='relative')
+                        |                         Relative
+                    label.checkbox(for='multiplecheckboxes-2-4')
+                        input#multiplecheckboxes-2-4(name='multiplecheckboxes-2' type='checkbox' value='Passerby')
+                        |                         Passerby
+                    label.checkbox(for='relationToInjuredPersonOrPropertyOwner_Other')
+                        input#relationToInjuredPersonOrPropertyOwner_Other(name='relationToInjuredPersonOrPropertyOwner_Other' type='checkbox' value='other')
+                        |                         Other
+            // Select Basic
+            .field
+                label.label(for='witnessMadeStatement')
+                    | Did witness make any statements? If yes, provide the
+                    | following
+                    | information.
+                .control
+                    .select
+                        select#witnessMadeStatement(name='witnessMadeStatement')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='witnessStatement') What did witness say?
+                .control
+                    textarea#witnessStatement.textarea(name='witnessStatement')
+            // Text input
+            .field
+                label.label(for='witnessLocationAtTimeOfAccident')
+                    | Where was witness when the accident
+                    | occurred?
+                .control
+                    input#witnessLocationAtTimeOfAccident.input(name='witnessLocationAtTimeOfAccident' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='wasDriverConductingAgencyBusiness')
+                    | Was the driver of the agency vehicle
+                    | conducting agency
+                    | business at the time of the accident?
+                .control
+                    .select
+                        select#wasDriverConductingAgencyBusiness(name='wasDriverConductingAgencyBusiness')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='streetAddressOfDriverAtTimeOfAccident')
+                    | What street was the agency driver
+                    | on?
+                .control
+                    input#streetAddressOfDriverAtTimeOfAccident.input(name='streetAddressOfDriverAtTimeOfAccident' type='text' value='')
+            // Text input
+            .field
+                label.label(for='streetAddressOfOtherDriverAtTimeOfAccident')
+                    | What street was the other driver
+                    | driving on?
+                .control
+                    input#streetAddressOfOtherDriverAtTimeOfAccident.input(name='streetAddressOfOtherDriverAtTimeOfAccident' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='directionOfTravelOfDriverAtTimeOfAccident')
+                    | What direction was the agency
+                    | driver traveling?
+                .control
+                    .select
+                        select#directionOfTravelOfDriverAtTimeOfAccident(name='directionOfTravelOfDriverAtTimeOfAccident')
+                            option(value='north') North
+                            option(value='south') South
+                            option(value='east') East
+                            option(value='west') West
+            // Select Basic
+            .field
+                label.label(for='directionOfTravelOfOtherDriverAtTimeOfAccident')
+                    | What direction was the other
+                    | driver traveling?
+                .control
+                    .select
+                        select#directionOfTravelOfOtherDriverAtTimeOfAccident(name='directionOfTravelOfOtherDriverAtTimeOfAccident')
+                            option(value='north') North
+                            option(value='south') South
+                            option(value='east') East
+                            option(value='west') West
+            // Select Basic
+            .field
+                label.label(for='weatherConditionsAtTimeOfAccident') Weather conditions
+                .control
+                    .select
+                        select#weatherConditionsAtTimeOfAccident(name='weatherConditionsAtTimeOfAccident')
+                            option(value='dry') Dry
+                            option(value='fog') Fog
+                            option(value='ice') Ice
+                            option(value='snow') Snow
+                            option(value='wet') Wet
+            .field
+                .file.has-name
+                    label.file-label
+                        input.file-input(name='resume' type='file')
+                        span.file-cta
+                            span.file-icon
+                                i.fas.fa-upload
+                            span.file-label
+                                | Choose a file...
+                        span.file-name
+                            | SAMPLE_FILE_NAME_HERE.txt
+            // Button (Double)
+            .field.is-grouped
+                .control
+                    button.button.is-info(type='submit') Submit
+                .control
+                    button.button.is-warning(type='reset') Reset

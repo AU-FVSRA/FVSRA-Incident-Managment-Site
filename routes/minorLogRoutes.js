@@ -8,9 +8,15 @@ module.exports = function (app) {
     app.route('/')
         .get(schema.index_test_page)
 
+    // Routes for for getting the form selected on the main page
     app.route('/formSelection')
         .get(schema.get_form_page)
         .post(schema.get_form_page)
+
+    // Routes for the admin page
+    app.route('/admin/reports')
+        .get(schema.get_admin_page)
+
 
     // schema Routes
     app.route('/MinorInjuryLog')
