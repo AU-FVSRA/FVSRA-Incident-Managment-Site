@@ -2,6 +2,8 @@
 
 const Log = require("../model/minorLogModel");
 
+const request = require('request');
+
 /* Jared:
    Added temporary index controller that just renders the form page (pug template)
    pretty sure that the html page was just out of scope for this project
@@ -63,9 +65,41 @@ exports.get_form_page = function (req, res) {
 }
 
 exports.get_admin_page = function (req, res) {
-    res.render('admin.pug', {
-        user: {isLoggedIn: true, isAdmin: true},
+
+    // --------- [DEVELOPMENT TEST] -----------
+    // Test get data from the API
+    // There has to be a better way to do this, but I'm not sure how yet
+    // https://livebook.manning.com/book/getting-mean-with-mongo-express-angular-and-node-second-edition/chapter-7/60
+    const requestOptions = {
+        url: 'http://localhost:3000/MinorInjuryLog',
+        method: 'GET',
+        json: {},
+        qs: {
+            offset: 20
+        }
+    };
+
+    let requestData = []
+    request(requestOptions, (err, response, body) => {
+        if (err) {
+            console.log(err);
+        } else if (response.statusCode === 200) {
+            requestData = body;
+            //console.log(body);
+        } else {
+            console.log(response.statusCode);
+        }
     });
+
+
+    setTimeout(() => {
+        console.log("REQUEST DATA: ");
+        console.log(requestData);
+        res.render('AdminReportMinorInjury.pug',
+            {user: {isLoggedIn: true, isAdmin: true}, minorInjuryLogReport: requestData, pretty: true});
+    }, 1000);
+
+
 };
 
 //-----------------------------------------------
@@ -74,6 +108,7 @@ exports.list_all_logs = function (req, res) {
     Log.getAllLogs(function (err, log) {
         if (err) res.send(err);
         res.send(log);
+        console.log(log)
     });
 };
 

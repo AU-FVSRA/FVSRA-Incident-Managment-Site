@@ -17,5 +17,8 @@
     "node": "^17.0.1",
     "pug": "^3.0.2"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "request": "^2.88.2"
+  }
 }
