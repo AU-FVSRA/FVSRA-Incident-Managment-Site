@@ -12,7 +12,7 @@ const request = require('request');
 
 exports.index_test_page = function (req, res) { //might change this later
     res.render('index.pug', {
-        user: {isLoggedIn: false},
+        user: {isLoggedIn: true, isAdmin: true, firstName: 'Jason'},
         copyright_current_year: new Date().getFullYear(),
         pretty: true
     });
@@ -21,9 +21,10 @@ exports.index_test_page = function (req, res) { //might change this later
 exports.get_form_page = function (req, res) {
     let selected_form = req.body.formSelection;
     let pugOptions = {
-        user: {isLoggedIn: true, isAdmin: true},
+        user: {isLoggedIn: true, isAdmin: true, firstName: 'Jason'},
         copyright_current_year: new Date().getFullYear(),
-        pretty: true
+        pretty: true,
+        existingData: [{}]
     }
 
     // No rendering done here????
@@ -66,38 +67,51 @@ exports.get_form_page = function (req, res) {
 
 exports.get_admin_page = function (req, res) {
 
-    // --------- [DEVELOPMENT TEST] -----------
-    // Test get data from the API
-    // There has to be a better way to do this, but I'm not sure how yet
-    // https://livebook.manning.com/book/getting-mean-with-mongo-express-angular-and-node-second-edition/chapter-7/60
-    const requestOptions = {
-        url: 'http://localhost:3000/MinorInjuryLog',
-        method: 'GET',
-        json: {},
-        qs: {
-            offset: 20
-        }
-    };
+    // // --------- [DEVELOPMENT TEST] -----------
+    // // Test get data from the API
+    // // There has to be a better way to do this, but I'm not sure how yet
+    // // https://livebook.manning.com/book/getting-mean-with-mongo-express-angular-and-node-second-edition/chapter-7/60
+    // const requestOptions = {
+    //     url: 'http://localhost:3000/MinorInjuryLog',
+    //     method: 'GET',
+    //     json: {},
+    //     qs: {
+    //         offset: 20
+    //     }
+    // };
+    //
+    // let requestData = []
+    // request(requestOptions, (err, response, body) => {
+    //     if (err) {
+    //         console.log(err);
+    //     } else if (response.statusCode === 200) {
+    //         requestData = body;
+    //         //console.log(body);
+    //     } else {
+    //         console.log(response.statusCode);
+    //     }
+    // });
+    //
+    //
+    // setTimeout(() => {
+    //     console.log("REQUEST DATA: ");
+    //     console.log(requestData);
+    //     res.render('AdminReportMinorInjury.pug',
+    //         {user: {isLoggedIn: true, isAdmin: true}, minorInjuryLogReport: requestData, pretty: true});
+    // }, 100);
 
-    let requestData = []
-    request(requestOptions, (err, response, body) => {
+    // 11/30/2021 11:30PM : Jared
+    // Fixed without using request and all that junk
+    // used the model Log to get the data from the database
+    // and then used the pug template to render the data
+    Log.getAllLogs(function (err, logs) {
         if (err) {
             console.log(err);
-        } else if (response.statusCode === 200) {
-            requestData = body;
-            //console.log(body);
         } else {
-            console.log(response.statusCode);
+            res.render('AdminReportMinorInjury.pug',
+                {user: {isLoggedIn: true, isAdmin: true}, minorInjuryLogReport: logs, pretty: true});
         }
     });
-
-
-    setTimeout(() => {
-        console.log("REQUEST DATA: ");
-        console.log(requestData);
-        res.render('AdminReportMinorInjury.pug',
-            {user: {isLoggedIn: true, isAdmin: true}, minorInjuryLogReport: requestData, pretty: true});
-    }, 1000);
 
 
 };
