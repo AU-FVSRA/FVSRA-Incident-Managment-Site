@@ -86,7 +86,7 @@ exports.render_minor_injury_update_page = function (req, res) {
     let id = req.query.id;
 
     // Only execute if the id is not null and a value is sent in the body
-    if(Object.keys(id).length >= 1) {
+    if (Object.keys(id).length >= 1) {
         Log.getLogByID(id, function (err, log) {
             if (err) {
                 console.log(err);
@@ -106,7 +106,7 @@ exports.render_minor_injury_update_page = function (req, res) {
     }
 };
 
-exports.update_minor_injury_log = function(req, res) {
+exports.update_minor_injury_log = function (req, res) {
 
     console.log(req.body);
     let id = req.body.id;
@@ -114,8 +114,8 @@ exports.update_minor_injury_log = function(req, res) {
 
     console.log(id, injuryLog);
 
-    Log.updateByID(id, injuryLog, function(err, log) {
-        if(err) {
+    Log.updateByID(id, injuryLog, function (err, log) {
+        if (err) {
             console.log(err);
         } else {
             //do success
@@ -123,7 +123,26 @@ exports.update_minor_injury_log = function(req, res) {
             res.redirect('/admin/reports');
         }
     });
+}
 
+exports.delete_minor_injury_log = function (req, res) {
+    let id = req.query.id;
+    console.log('trying to delete: ' + id);
+
+    //make sure object is not empty/undefined
+    if (Object.keys(id).length >= 1) {
+        Log.remove(id, function (err, log) {
+            if (err) {
+                console.log(err);
+            } else {
+                //do success
+                console.log("Successfully deleted log");
+                res.redirect('/admin/reports');
+            }
+        });
+    } else {
+        res.render('404.pug', {pretty: true});
+    }
 }
 
 //-----------------------------------------------

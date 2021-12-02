@@ -22,6 +22,12 @@ module.exports = function (app) {
         .get(schema.render_minor_injury_update_page)
         .post(schema.update_minor_injury_log)
 
+    // route for deleting the form
+    app.route('/deleteForm')
+        .get(schema.delete_minor_injury_log)
+
+    // -------------------------------------------------
+    // REST routes
 
     // schema Routes
     app.route('/MinorInjuryLog')

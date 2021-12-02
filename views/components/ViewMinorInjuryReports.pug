@@ -23,7 +23,9 @@ section.section.is-medium
                     tr
                         td
                             | #{item.id}
-                            form(method='get' action='/updateForm' id='form'+item.id)
+                            form(method='get' action='/updateForm' id='updateForm'+item.id)
+                                input(type='hidden' name='id' value=item.id)
+                            form(method='get' action='/deleteForm' id='deleteForm'+item.id)
                                 input(type='hidden' name='id' value=item.id)
                         td #{item.injuryDate}
                         td #{item.injuryTime}
@@ -32,8 +34,8 @@ section.section.is-medium
                         td #{item.nameOfInjured}
                         td
                             .buttons
-                                input.button.is-info(type='submit' form='form'+item.id value='Edit')
-                                a.button.is-danger(href='/') Delete
+                                input.button.is-info(type='submit' form='updateForm'+item.id value='Edit')
+                                input.button.is-danger(type='submit' form='deleteForm'+item.id value='Delete')
 
 script.
     $(document).ready(function() {
