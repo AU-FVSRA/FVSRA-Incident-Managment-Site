@@ -15,6 +15,7 @@ section.section.is-medium
                     th Report Time
                     th Program Name
                     th Program Season/Year
+                    th Injured Person Name
                     th Actions
             tbody
                 // SAMPLE ITEM #1
@@ -28,6 +29,7 @@ section.section.is-medium
                         td #{item.injuryTime}
                         td #{item.programName}
                         td #{item.programYear}
+                        td #{item.nameOfInjured}
                         td
                             .buttons
                                 input.button.is-info(type='submit' form='form'+item.id value='Edit')
