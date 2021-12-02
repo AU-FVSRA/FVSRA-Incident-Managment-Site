@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title Success!
+        link(rel='stylesheet', href='/css/bulma.css')
+    body
+        section.hero.is-fullheight.is-success
+            .hero-body
+                div.placeholder
+                    h1.title Form Submission Successful!
+                        span.icon
+                            i.fas.fa-check
+                    p.subtitle Thank you for your submission! Please make note of the following information:
+                    p.subtitle Confirmation Number: ##{confirmationNumber}
+
+                    p.subtitle You should be redirected to the home page in 5 seconds. If not click the button below.
+                    a.button.is-dark(href="/" title="Go to homepage") Home
+    script(type="text/javascript").
+        setTimeout(function () {
+            window.location.href = "/";
+        }, 5000);

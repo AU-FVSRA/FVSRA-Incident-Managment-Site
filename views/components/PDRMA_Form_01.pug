@@ -1,0 +1,521 @@
+section.section
+    .container
+        .message.is-info.has-text-centered
+            .message-body
+                figure.image.is-128x128
+                    img.is-rounded(alt='PDRMA_LOGO_ROUNDED' src='https://media-exp1.licdn.com/dms/image/C4E0BAQHJeEACfvB0WQ/company-logo_200_200/0/1623763985456?e=2159024400&v=beta&t=6P9gEX5E-fAXw32TdOXnFY2iLws01efvqMzBCHFp1VE')
+                h1.title Park District Risk Management Agency (Form 01)
+                p.subtitle Accident/Incident Report
+                p.subtitle Attorney/Client Privileged Document
+        form
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='agencyName') Agency Name
+                        .control
+                            input#agencyName.input(name='agencyName' type='text' value='Fox Valley Special Recreation Agency')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='todaysDate') Today&apos;s date
+                        .control
+                            input#todaysDate.input(name='todaysDate' type='date' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='dateOfIncident') Date of incident
+                        .control
+                            input#dateOfIncident.input(name='dateOfIncident' placeholder='(mm/dd/yyyy)' type='date' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='timeOfIncident') Time of incident
+                        .control
+                            input#timeOfIncident.input(name='timeOfIncident' placeholder='(hh/mm a.m./p.m.)' type='time' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='nameOfPersonCompletingReport')
+                            | Name of person completing the
+                            | report
+                        .control
+                            input#nameOfPersonCompletingReport.input(name='nameOfPersonCompletingReport' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='titleOfPersonCompletingReport')
+                            | Title of person completing the
+                            | report
+                        .control
+                            input#titleOfPersonCompletingReport.input(name='titleOfPersonCompletingReport' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='businessPhoneNumber') Business phone number
+                        .control
+                            input#businessPhoneNumber.input(name='businessPhoneNumber' placeholder='630.907.114' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='businessEmail') Business email
+                        .control
+                            input#businessEmail.input(name='businessEmail' placeholder='jasonp@rsvp.org' type='text' value='')
+            // Text input
+            .field
+                label.label(for='howDidIncidentOccur')
+                    | How did the incident occur? (Provide a brief, factual
+                    | description; do
+                    | not speculate fault, etc.)
+                .control
+                    input#howDidIncidentOccur.input(name='howDidIncidentOccur' type='text' value='')
+            // Text input
+            .field
+                label.label(for='locationOfIncident')
+                    | Name of the location (park, pool, community center; Ex.
+                    | Smith Pool,
+                    | Johnson Community Center) or nearest intersection where the incident occurred.
+                .control
+                    input#locationOfIncident.input(name='locationOfIncident' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='incidentAddressExists')
+                    | Is there an address for this location? If yes, please provide the following:
+                .control
+                    .select
+                        select#incidentAddressExists(name='incidentAddressExists')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='incidentAddressStreet') Street address
+                .control
+                    input#incidentAddressStreet.input(name='incidentAddressStreet' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='incidentAddressCity') City
+                        .control
+                            input#incidentAddressCity.input(name='incidentAddressCity' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='incidentAddressState') State
+                        .control
+                            input#incidentAddressState.input(name='incidentAddressState' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='incidentAddressPostalCode') Zip code
+                        .control
+                            input#incidentAddressPostalCode.input(name='incidentAddressPostalCode' type='text' value='')
+            // Text input
+            .field
+                label.label(for='incidentFacilityLocation')
+                    | Location (Specify the exact type of
+                    | location/facility where
+                    | injury
+                    | occurred. Ex. maintenance garage, sports field, aquatic outdoor, golf course, etc.)
+                .control
+                    input#incidentFacilityLocation.input(name='incidentFacilityLocation' type='text' value='')
+            // Text input
+            .field
+                label.label(for='incidentFacilitySpecificLocation')
+                    | Primary location (Specify exact location.
+                    | Ex. lap pool, cart
+                    | storage, classroom, pavilion)
+                .control
+                    input#incidentFacilitySpecificLocation.input(name='incidentFacilitySpecificLocation' type='text' value='')
+            hr
+            // Select Basic
+            .field
+                label.label(for='wasSomeoneInjured')
+                    | Was a person injured? (Ex. patron, citizen, participant,
+                    | volunteer)
+                    | If yes, please provide the following information:
+                .control
+                    .select
+                        select#wasSomeoneInjured(name='wasSomeoneInjured')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='injuredPersonLastName') Last name
+                        .control
+                            input#injuredPersonLastName.input(name='injuredPersonLastName' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='injuredPersonFirstName') First Name
+                        .control
+                            input#injuredPersonFirstName.input(name='injuredPersonFirstName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='injuredPersonStreetAddress') Address
+                .control
+                    input#injuredPersonStreetAddress.input(name='injuredPersonStreetAddress' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='injuredPersonCity') City
+                        .control
+                            input#injuredPersonCity.input(name='injuredPersonCity' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='injuredPersonState') State
+                        .control
+                            input#injuredPersonState.input(name='injuredPersonState' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='injuredPersonPostalCode') Zip code
+                        .control
+                            input#injuredPersonPostalCode.input(name='injuredPersonPostalCode' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='injuredPersonHomePhoneNumber') Home phone #
+                        .control
+                            input#injuredPersonHomePhoneNumber.input(name='injuredPersonHomePhoneNumber' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='injuredPersonWorkPhoneNumber') Work phone #
+                        .control
+                            input#injuredPersonWorkPhoneNumber.input(name='injuredPersonWorkPhoneNumber' type='text')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='injuredPersonCellPhoneNumber') Cell phone #
+                        .control
+                            input#injuredPersonCellPhoneNumber.input(name='injuredPersonCellPhoneNumber' type='text' value='')
+            // Text input
+            .field
+                label.label(for='injuredPersonAge') Age
+                .control
+                    input#injuredPersonAge.input(name='injuredPersonAge' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='injuredPersonSex') Sex
+                .control
+                    .select
+                        select#injuredPersonSex(name='injuredPersonSex')
+                            option(value='male') Male
+                            option(value='female') Female
+                            // <option value="non-binary">Non-Binary</option>
+            // Select Basic
+            .field
+                label.label(for='isInjuredPersonAVolunteer') Is injured person an agency volunteer?
+                .control
+                    .select
+                        select#isInjuredPersonAVolunteer(name='isInjuredPersonAVolunteer')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='injuryBriefDescription')
+                    | Describe the injury (affected body part and type of
+                    | injury;
+                    | Ex.
+                    | contusion, bruise, laceration, sprain, break, etc.)
+                .control
+                    textarea#injuryBriefDescription.textarea(name='injuryBriefDescription')
+            // Select Basic
+            .field
+                label.label(for='didInjuredPersonMakeStatement') Did injured person make any statements?
+                .control
+                    .select
+                        select#didInjuredPersonMakeStatement(name='didInjuredPersonMakeStatement')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='injuredPersonStatement') If yes, what did injured person say?
+                .control
+                    textarea#injuredPersonStatement.textarea(name='injuredPersonStatement')
+            hr
+            // Select Basic
+            .field
+                label.label(for='wasFirstAidAdministered') Was first aid administered?
+                .control
+                    .select
+                        select#wasFirstAidAdministered(name='wasFirstAidAdministered')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .columns
+                .column
+                    .field
+                        label.label(for='nameOfPersonWhoProvidedFirstAid')
+                            | Name of person who administered first aid
+                        .control
+                            input#nameOfPersonWhoProvidedFirstAid.input(name='nameOfPersonWhoProvidedFirstAid' type='text' value='')
+                .column
+                    .field
+                        label.label(for='titleOfPersonWhoProvidedFirstAid')
+                            | Title of person who administered first aid
+                        .control
+                            input#titleOfPersonWhoProvidedFirstAid.input(name='titleOfPersonWhoProvidedFirstAid' type='text' value='')
+            // Text input
+            .field
+                label.label(for='whatFirstAidWasGiven') What first aid was given?
+                .control
+                    input#whatFirstAidWasGiven.input(name='whatFirstAidWasGiven' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='firstFirstAidInvolveAEDorCPR')
+                    | Did first aid involve AED and/or CPR? If yes, please
+                    | submit a PDRMA post-AED form.
+                .control
+                    .select
+                        select#firstFirstAidInvolveAEDorCPR(name='firstFirstAidInvolveAEDorCPR')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Select Basic
+            .field
+                label.label(for='wereParamedicServicesOffered') Were paramedic services offered?
+                .control
+                    .select
+                        select#wereParamedicServicesOffered(name='wereParamedicServicesOffered')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Select Basic
+            .field
+                label.label(for='wereParamedicServicesCalledAndRefused')
+                    | Called and refused (at scene by
+                    | patron)
+                .control
+                    .select
+                        select#wereParamedicServicesCalledAndRefused(name='wereParamedicServicesCalledAndRefused')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Select Basic
+            .field
+                label.label(for='wereParamedicServicesOfferedAndCalled') Offered and called
+                .control
+                    .select
+                        select#wereParamedicServicesOfferedAndCalled(name='wereParamedicServicesOfferedAndCalled')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Select Basic
+            .field
+                label.label(for='wereParamedicServicesOfferedAndRefused') Offered and refused
+                .control
+                    .select
+                        select#wereParamedicServicesOfferedAndRefused(name='wereParamedicServicesOfferedAndRefused')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Select Basic
+            .field
+                label.label(for='wereParamedicServicesOfferedRefusedButCalled')
+                    | Offered, refused, called by
+                    | agency anyway
+                .control
+                    .select
+                        select#wereParamedicServicesOfferedRefusedButCalled(name='wereParamedicServicesOfferedRefusedButCalled')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Select Basic
+            .field
+                label.label(for='wereParamedicsCalledUnresponsivePerson') Unable to respond and called
+                .control
+                    .select
+                        select#wereParamedicsCalledUnresponsivePerson(name='wereParamedicsCalledUnresponsivePerson')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Select Basic
+            .field
+                label.label(for='werePoliceCalled')
+                    | Were police called? If yes, please provide the following
+                    | information.
+                .control
+                    .select
+                        select#werePoliceCalled(name='werePoliceCalled')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='policeDepartmentName') Name of police department
+                .control
+                    input#policeDepartmentName.input(name='policeDepartmentName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='policeOfficerName') Name of officer
+                .control
+                    input#policeOfficerName.input(name='policeOfficerName' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='expectingPoliceReportFromInjuredPerson')
+                    | Do you expect this person to submit a
+                    | claim?
+                .control
+                    .select
+                        select#expectingPoliceReportFromInjuredPerson(name='expectingPoliceReportFromInjuredPerson')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            hr
+            // Select Basic
+            .field
+                label.label(for='wasPropertyDamaged')
+                    | Was property damaged as a result of this
+                    | accident/incident?
+                .control
+                    .select
+                        select#wasPropertyDamaged(name='wasPropertyDamaged')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Select Basic
+            .field
+                label.label(for='propertyDamageOwner')
+                    | If yes, how was the person involved in the
+                    | accident/incident?
+                .control
+                    .select
+                        select#propertyDamageOwner(name='propertyDamageOwner')
+                            option(value='1') Owner of property adjacent to park district
+                            option(value='2') Patron
+                            option(value='3') Vehicle owner
+                            option(value='4') Other
+            // Text input
+            .field
+                label.label(for='propertyDamageOwnerName') Last name (or business name)
+                .control
+                    input#propertyDamageOwnerName.input(name='propertyDamageOwnerName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='propertyDamageOwnerFirstName')
+                    | First name (not necessary if business
+                    | name)
+                .control
+                    input#propertyDamageOwnerFirstName.input(name='propertyDamageOwnerFirstName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='propertyDamageAddress') Address
+                .control
+                    input#propertyDamageAddress.input(name='propertyDamageAddress' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='propertyDamageCity') City
+                        .control
+                            input#propertyDamageCity.input(name='propertyDamageCity' type='text')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='propertyDamageState') State
+                        .control
+                            input#propertyDamageState.input(name='propertyDamageState' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='propertyDamagePostalCode') Zip code
+                        .control
+                            input#propertyDamagePostalCode.input(name='propertyDamagePostalCode' type='text' value='')
+            // Text input
+            .field
+                label.label(for='textinput-37') Phone number
+                .control
+                    input#textinput-37.input(name='textinput-37' type='text')
+            // Text input
+            .field
+                label.label(for='textinput-38') Describe the property damage
+                .control
+                    input#textinput-38.input(name='textinput-38' type='text')
+            hr
+            // Text input
+            .field
+                label.label
+                    | If there was a witness(es) to the accident/incident, please provide the following information:
+            .columns
+                .column
+                    .field
+                        label.label(for='witnessLastName') Last name
+                        .control
+                            input#witnessLastName.input(name='witnessLastName' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessFirstName') First name
+                        .control
+                            input#witnessFirstName.input(name='witnessFirstName' type='text' value='')
+            // Text input
+            .field
+                label.label(for='witnessAddress') Address
+                .control
+                    input#witnessAddress.input(name='witnessAddress' type='text' value='')
+            .columns
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessCity') City
+                        .control
+                            input#witnessCity.input(name='witnessCity' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessState') State
+                        .control
+                            input#witnessState.input(name='witnessState' type='text' value='')
+                .column
+                    // Text input
+                    .field
+                        label.label(for='witnessPostalCode') Zip code
+                        .control
+                            input#witnessPostalCode.input(name='witnessPostalCode' type='text' value='')
+            // Text input
+            .field
+                label.label(for='witnessPhoneNumber') Phone number
+                .control
+                    input#witnessPhoneNumber.input(name='witnessPhoneNumber' type='text' value='')
+            // Select Basic
+            .field
+                label.label(for='disWitnessMakeAStatement') Did witness make any statements?
+                .control
+                    .select
+                        select#disWitnessMakeAStatement(name='disWitnessMakeAStatement')
+                            option(value='yes') Yes
+                            option(value='no') No
+                            option(value='unknown') Unknown
+            // Text input
+            .field
+                label.label(for='witnessStatement') If yes, what did witness say?
+                .control
+                    textarea#witnessStatement.textarea(name='witnessStatement')
+            // Text input
+            .field
+                label.label(for='witnessLocationAtTimeOfIncident')
+                    | Where was witness when the accident/incident
+                    | occurred?
+                .control
+                    input#witnessLocationAtTimeOfIncident.input(name='witnessLocationAtTimeOfIncident' type='text' value='')
+            // Button (Double)
+            .field.is-grouped
+                .control
+                    button.button.is-info(type='submit') Submit
+                .control
+                    button.button.is-warning(type='reset') Reset

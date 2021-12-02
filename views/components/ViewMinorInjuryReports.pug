@@ -1,0 +1,45 @@
+script(crossorigin='anonymous' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' src='https://code.jquery.com/jquery-3.6.0.min.js')
+script(src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js')
+script(src='https://cdn.datatables.net/1.11.3/js/dataTables.bulma.min.js')
+section.section.is-medium
+    .container
+        h1.title
+            | Minor Injury Reports...
+        p.subtitle
+            | Please select a report to view from the list below.
+        table#minorInjuryLogReport.table.is-striped.is-fullwidth
+            thead
+                tr
+                    th ID
+                    th Report Date
+                    th Report Time
+                    th Program Name
+                    th Program Season/Year
+                    th Program Leader
+                    th Injured Person Name
+                    th Actions
+            tbody
+                // SAMPLE ITEM #1
+                for item in minorInjuryLogReport
+                    tr
+                        td
+                            | #{item.id}
+                            form(method='get' action='/updateForm' id='updateForm'+item.id)
+                                input(type='hidden' name='id' value=item.id)
+                            form(method='get' action='/deleteForm' id='deleteForm'+item.id)
+                                input(type='hidden' name='id' value=item.id)
+                        td #{item.injuryDate}
+                        td #{item.injuryTime}
+                        td #{item.programName}
+                        td #{item.programYear}
+                        td #{item.programLeader}
+                        td #{item.nameOfInjured}
+                        td
+                            .buttons
+                                input.button.is-info(type='submit' form='updateForm'+item.id value='View / Edit')
+                                input.button.is-danger(type='submit' form='deleteForm'+item.id value='Delete')
+
+script.
+    $(document).ready(function() {
+        $('#minorInjuryLogReport').DataTable({"paging": true});
+    } );

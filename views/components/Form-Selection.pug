@@ -1,0 +1,22 @@
+section.section.is-large
+    .container
+        h1.title
+            | Form Selection
+        p.subtitle
+            | Please select a form to fill out.
+        form(method="post" action="formSelection")
+            .field
+                label.label(for='formSelection') Select a form
+                .control
+                    .select
+                        select#formSelection(name='formSelection')
+                            option(value='') Select a form
+                            option(value='minorInjuryForm') Minor Injury Log (Most Common)
+                            option(value='pdrmaForm01') PDRMA Accident/Incident Report (Form 01)
+                            option(value='pdrmaForm02') PDRMA Vehicle Accident Report (Form 02)
+                            option(value='pdrmaForm03') PDRMA Property Loss Report (Form 03)
+                            option(value='pdrmaForm04') PDRMA Employee Injury Report (Form 04)
+                            option(value='pdrmaForm04E') PDRMA Notification of Injury to Employer Report (Form 04E)
+            .field
+                .control
+                    button.button.is-info Submit
