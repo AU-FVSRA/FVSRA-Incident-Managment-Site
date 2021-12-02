@@ -38,4 +38,7 @@ module.exports = function (app) {
         .get(schema.read_a_log)
         .put(schema.update_a_log)
         .delete(schema.delete_a_log);
+
+    app.route('*')
+        .get(schema.not_found_error);
 };

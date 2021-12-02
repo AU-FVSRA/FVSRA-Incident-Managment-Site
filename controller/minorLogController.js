@@ -145,6 +145,10 @@ exports.delete_minor_injury_log = function (req, res) {
     }
 }
 
+exports.not_found_error = function (req, res) {
+    res.render('404.pug', {pretty: true});
+}
+
 //-----------------------------------------------
 
 exports.list_all_logs = function (req, res) {
