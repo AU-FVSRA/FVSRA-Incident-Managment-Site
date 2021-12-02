@@ -2,8 +2,6 @@
 
 const Log = require("../model/minorLogModel");
 
-const request = require('request');
-
 /* Jared:
    Added temporary index controller that just renders the form page (pug template)
    pretty sure that the html page was just out of scope for this project
@@ -23,12 +21,9 @@ exports.get_form_page = function (req, res) {
     let pugOptions = {
         user: {isLoggedIn: true, isAdmin: true, firstName: 'Jason'},
         copyright_current_year: new Date().getFullYear(),
-        pretty: true,
-        existingData: [{}]
-    }
+        pretty: true
+    };
 
-    // No rendering done here????
-    // Where should this be rendered? (Do a res.redirect() to the form page?)
     switch (selected_form) {
         case "minorInjuryForm":
             pugOptions.formTitle = "minorInjuryForm";
@@ -67,39 +62,6 @@ exports.get_form_page = function (req, res) {
 
 exports.get_admin_page = function (req, res) {
 
-    // // --------- [DEVELOPMENT TEST] -----------
-    // // Test get data from the API
-    // // There has to be a better way to do this, but I'm not sure how yet
-    // // https://livebook.manning.com/book/getting-mean-with-mongo-express-angular-and-node-second-edition/chapter-7/60
-    // const requestOptions = {
-    //     url: 'http://localhost:3000/MinorInjuryLog',
-    //     method: 'GET',
-    //     json: {},
-    //     qs: {
-    //         offset: 20
-    //     }
-    // };
-    //
-    // let requestData = []
-    // request(requestOptions, (err, response, body) => {
-    //     if (err) {
-    //         console.log(err);
-    //     } else if (response.statusCode === 200) {
-    //         requestData = body;
-    //         //console.log(body);
-    //     } else {
-    //         console.log(response.statusCode);
-    //     }
-    // });
-    //
-    //
-    // setTimeout(() => {
-    //     console.log("REQUEST DATA: ");
-    //     console.log(requestData);
-    //     res.render('AdminReportMinorInjury.pug',
-    //         {user: {isLoggedIn: true, isAdmin: true}, minorInjuryLogReport: requestData, pretty: true});
-    // }, 100);
-
     // 11/30/2021 11:30PM : Jared
     // Fixed without using request and all that junk
     // used the model Log to get the data from the database
@@ -109,12 +71,60 @@ exports.get_admin_page = function (req, res) {
             console.log(err);
         } else {
             res.render('AdminReportMinorInjury.pug',
-                {user: {isLoggedIn: true, isAdmin: true}, minorInjuryLogReport: logs, pretty: true});
+                {
+                    user: {isLoggedIn: true, isAdmin: true, firstName: 'Jason'},
+                    minorInjuryLogReport: logs,
+                    pretty: true
+                });
         }
     });
 
-
 };
+
+exports.render_minor_injury_update_page = function (req, res) {
+    //let id = req.body.id;
+    let id = req.query.id;
+
+    // Only execute if the id is not null and a value is sent in the body
+    if(Object.keys(id).length >= 1) {
+        Log.getLogByID(id, function (err, log) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.render('UpdateMinorInjuryReport.pug',
+                    {
+                        user: {isLoggedIn: true, isAdmin: true, firstName: 'Jason'},
+                        minorInjuryLogReport: log,
+                        pretty: true,
+                        reportDetails: log
+                    }
+                );
+            }
+        });
+    } else {
+        res.render('404.pug', {pretty: true});
+    }
+};
+
+exports.update_minor_injury_log = function(req, res) {
+
+    console.log(req.body);
+    let id = req.body.id;
+    let injuryLog = new Log(req.body);
+
+    console.log(id, injuryLog);
+
+    Log.updateByID(id, injuryLog, function(err, log) {
+        if(err) {
+            console.log(err);
+        } else {
+            //do success
+            console.log("Successfully updated log");
+            res.redirect('/admin/reports');
+        }
+    });
+
+}
 
 //-----------------------------------------------
 

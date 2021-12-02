@@ -17,6 +17,11 @@ module.exports = function (app) {
     app.route('/admin/reports')
         .get(schema.get_admin_page)
 
+    // route for updating the form
+    app.route('/updateForm')
+        .get(schema.render_minor_injury_update_page)
+        .post(schema.update_minor_injury_log)
+
 
     // schema Routes
     app.route('/MinorInjuryLog')

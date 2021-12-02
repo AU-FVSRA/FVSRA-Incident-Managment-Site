@@ -5,7 +5,7 @@ section.section
         p.subtitle
             | Please fill out the form below to report a minor injury.
         // form below
-        form#minorInjuryReportForm(method='post' action='/MinorInjuryLog')
+        form#minorInjuryReportForm(method='post' action='/updateForm')
             // Form section #1
             .columns
                 // warning/instructions
@@ -27,6 +27,8 @@ section.section
                 // program/group name
                 .column
                     .field
+                        input(type='text' name='id' value=reportDetails[0].id hidden)
+                    .field
                         label.label(for='programName') Program/Group Name
                         .control.has-icons-left
                             span#programSelection.select
@@ -43,11 +45,11 @@ section.section
                     .field
                         label.label(for='programLeader') Program Leader(s)
                         .control
-                            input#programLeader.input(name='programLeader' type='text' required)
+                            input#programLeader.input(name='programLeader' type='text' required value=reportDetails[0].programLeader)
                     .field
                         label.label(for='programYear') Program Season/Year
                         .control
-                            input#programYear.input(name='programYear' type='text')
+                            input#programYear.input(name='programYear' type='text' required value=reportDetails[0].programYear)
             hr
             // Form Section #2
             .field
@@ -55,38 +57,40 @@ section.section
                     .column
                         label.label(for='injuryDate') Injury Date
                         .control
-                            input#injuryDate.input(name='injuryDate' type='date')
+                            input#injuryDate.input(name='injuryDate' type='date' required value=reportDetails[0].injuryDate)
                     .column
                         label.label(for='injuryTime') Injury Time
                         .control
-                            input#injuryTime.input(name='injuryTime' type='time')
+                            input#injuryTime.input(name='injuryTime' type='time' required value=reportDetails[0].injuryTime)
             .field
                 label.label(for='nameOfInjured') Name of Injured Person
                 .control
-                    input#nameOfInjured.input(name='nameOfInjured' placeholder='Name of Injured Person' type='text')
+                    input#nameOfInjured.input(name='nameOfInjured' placeholder='Name of Injured Person' type='text' required value=reportDetails[0].nameOfInjured)
             .field
                 label.label(for='injuryLocation') Location of Injury on Person
                 .control
-                    input#injuryLocation.input(name='injuryLocation' placeholder='Location of Injury (Ex. Right Elbow, Left Knee, etc.)' type='text')
+                    input#injuryLocation.input(name='injuryLocation' placeholder='Location of Injury (Ex. Right Elbow, Left Knee, etc.)' type='text' required value=reportDetails[0].injuryLocation)
             .field
                 label.label(for='treatmentGiven') Treatment Administered
                 .control
-                    input#treatmentGiven.input(name='treatmentGiven' placeholder='Treatment Administered (Ex. Rinsed wound, applied bandage, ice pack provided, etc.)' type='text')
+                    input#treatmentGiven.input(name='treatmentGiven' placeholder='Treatment Administered (Ex. Rinsed wound, applied bandage, ice pack provided, etc.)' type='text' required value=reportDetails[0].treatmentGiven)
             .field
                 label.label(for='howInjuryOccurred') How Injury Occurred
                 .control
-                    textarea#howInjuryOccurred.textarea(name='howInjuryOccurred' placeholder='Explain how the injury occurred (Ex. Fell off swing)')
+                    textarea#howInjuryOccurred.textarea(name='howInjuryOccurred' placeholder='Explain how the injury occurred (Ex. Fell off swing)' required) #{reportDetails[0].howInjuryOccurred}
             .field
                 label.label(for='whereInjuryOccurred') Facility/Location Injury Occurred
                 .control
-                    textarea#whereInjuryOccurred.textarea(name='whereInjuryOccurred' placeholder='Where did the injury take place? (Ex. Harmony Park Swings)' rows='2')
+                    textarea#whereInjuryOccurred.textarea(name='whereInjuryOccurred' placeholder='Where did the injury take place? (Ex. Harmony Park Swings)' rows='2' required) #{reportDetails[0].whereInjuryOccurred}
+
             .field
                 label.label(for='staffName') Full Name of Staff Who Notified Parent/Guardian
                 .control
-                    input#staffName.input(name='staffName' placeholder='Staff member who notified parent/guardian of injured peron.' type='text')
+                    input#staffName.input(name='staffName' placeholder='Staff member who notified parent/guardian of injured peron.' type='text' required value=reportDetails[0].staffName)
             .field.is-pulled-right
-                .control
-                    input.button.is-info(type='submit' value='Submit')
+                .buttons
+                    a.button.is-danger(href='/admin/reports') Cancel
+                    input.button.is-warning(type='submit' value='Update')
 
 script(type='text/javascript').
     //hide the column with id="instructionsCol"

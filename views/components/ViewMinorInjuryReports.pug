@@ -20,14 +20,17 @@ section.section.is-medium
                 // SAMPLE ITEM #1
                 for item in minorInjuryLogReport
                     tr
-                        td #{item.id}
+                        td
+                            | #{item.id}
+                            form(method='get' action='/updateForm' id='form'+item.id)
+                                input(type='hidden' name='id' value=item.id)
                         td #{item.injuryDate}
                         td #{item.injuryTime}
                         td #{item.programName}
                         td #{item.programYear}
                         td
                             .buttons
-                                a.button.is-info(href='/') View
+                                input.button.is-info(type='submit' form='form'+item.id value='Edit')
                                 a.button.is-danger(href='/') Delete
 
 script.
